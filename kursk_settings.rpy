@@ -84,7 +84,7 @@ init 2 python:
 
 init python:
     default_k_path = "mods/kursk_es_mod/materials/"
-
+    
     
     renpy.music.register_channel("sound_1",loop=False)
     renpy.music.register_channel("sound_2",loop=False)
