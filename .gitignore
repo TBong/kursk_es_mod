@@ -1,0 +1,6 @@
+*.rpyc
+*.bak
+**.rpyc
+**.bak
+*.jar
+**.jar
