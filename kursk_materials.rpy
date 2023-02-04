@@ -17,5 +17,8 @@ init 2:
         contains:
             SnowBlossom("Dst dst2", 20, 50, (25,30), (-30,30), 25, False, True)
 
+    #Шрифт
+    $ furore = gFile("font/Furore.ttf")
+
     #Музыка
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")

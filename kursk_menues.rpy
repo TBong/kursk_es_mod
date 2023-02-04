@@ -11,6 +11,7 @@ screen k_main_menu:
         auto gFile("screens/menu/load_2_%s.png")
         xpos 55
         ypos 400
+        action ShowMenu('k_load')
     imagebutton:
         xpos 55
         ypos 600
@@ -28,7 +29,7 @@ screen k_main_menu:
 
 
 #Маленькое меню
-screen dpa_menu_selector:
+screen k_menu_selector:
     tag menu
     modal True
 
@@ -42,7 +43,7 @@ screen dpa_menu_selector:
         yfill True
         action Return()
     
-    add gFile("image/screens/menu/lil_menu_back.png"):
+    add gFile("menu/lil_menu_back.png"):
         xalign 0.5
         yalign 0.5
 
@@ -88,11 +89,12 @@ screen dpa_menu_selector:
         text_style "text_save_load"
         action [ Function(rollbackVisual), Return() ]
 
-screen dpa_Load:
+#Меню загрузки
+screen k_load:
     tag menu
     modal True
     window:
-        add "menu_back":
+        add "kursk1":
             xpos -6
             ypos -6
 
@@ -154,13 +156,77 @@ screen dpa_Load:
                                 xpos 15
                                 ypos 15
 
+#Меню сохранения
+screen k_Save:
+    tag menu
+    modal True
+    window:
+        add "menu_back":
+            xpos -6
+            ypos -6
 
+        textbutton ["Сохранить игру"]:
+            ypos 950
+            xalign 0.5
+            text_style "text_save_load"
+            style "button_none"
+            action FileSave(selected_slot)
 
-#Диалоговое окно
-screen dpa_say_gui_reborn:
+        textbutton ["Удалить"]:
+            xpos 1500
+            ypos 950
+            text_style "text_save_load"
+            style "button_none"
+            action FileDelete(selected_slot)
+
+        textbutton ["Назад"]:
+            xpos 30
+            ypos 950
+            text_style "text_save_load"
+            style "button_none"
+            action Return()
+
+        vbox:
+            xalign 0.037
+            yalign 0.52
+            grid 1 9:
+                for i in range(1, 10):
+                    textbutton str(i):
+                        right_padding 55
+                        text_size 60
+                        text_style "text_save_load"
+                        style "button_none"
+                        xpos getXPos(i)
+                        action (FilePage(str(i)), SetVariable("selected_slot", False))
+        grid 4 3:
+            xpos 0.11
+            ypos 0.2
+            xmaximum 0.81
+            ymaximum 0.65
+            transpose False
+            xfill True
+            yfill True
+            for i in range(1, 13):
+                fixed:
+                    add FileScreenshot(i):
+                        xpos 10
+                        ypos 10
+                    button:
+                        action SetVariable("selected_slot", i)
+                        xfill False
+                        yfill False
+                        style "file_load_button"
+                        fixed:
+                            text ( "%s." % i
+                                   + FileTime(i, format=' %d.%m.%y, %H:%M', empty=" "+translation["Empty_slot"][_preferences.language])
+                                   + "\n" +FileSaveName(i)):
+                                xpos 15
+                                ypos 15
+
+screen k_say_gui_reborn:
     window background None id "window":
         if persistent.font_size == "large":
-            add gFileSayGui("dialog_box_large.png") xpos -5 ypos 863
+            add gFileSayGui("gray_reborn/dialog_box_large.png") xpos -5 ypos 863
 
             if not config.skipping:
                 imagebutton auto gFileSayGui("forward_l_%s.png") xpos 1750 ypos 912 action Skip()
@@ -184,71 +250,4 @@ screen dpa_say_gui_reborn:
 
             text what id "what" xpos 155 ypos 969 xmaximum 1610 size 28 line_spacing 2
             if who:
-                text who id "who" xpos 180 ypos 935 size 28 line_spacing 2
-
-#Меню загрузки
-screen dpa_Load:
-    tag menu
-    modal True
-    window:
-        add "menu_back":
-            xpos -6
-            ypos -6
-
-        textbutton ["Загрузить игру"]:
-            ypos 950
-            xalign 0.5
-            text_style "text_save_load"
-            style "button_none"
-            action [FileLoad(selected_slot) ]
-
-        textbutton ["Удалить"]:
-            xpos 1500
-            ypos 950
-            text_style "text_save_load"
-            style "button_none"
-            action FileDelete(selected_slot)
-
-        textbutton ["Назад"]:
-            xpos 30
-            ypos 950
-            text_style "text_save_load"
-            style "button_none"
-            action Return()
-
-        vbox:
-            xalign 0.037
-            yalign 0.52
-            grid 1 9:
-                for i in range(1, 10):
-                    textbutton str(i):
-                        right_padding 55
-                        text_size 60
-                        text_style "text_save_load"
-                        style "button_none"
-                        xpos getXPos(i)
-                        action (FilePage(str(i)), SetVariable("selected_slot", False))
-        grid 4 3:
-            xpos 0.11
-            ypos 0.2
-            xmaximum 0.81
-            ymaximum 0.65
-            transpose False
-            xfill True
-            yfill True
-            for i in range(1, 13):
-                fixed:
-                    add FileScreenshot(i):
-                        xpos 10
-                        ypos 10
-                    button:
-                        action SetVariable("selected_slot", i)
-                        xfill False
-                        yfill False
-                        style "file_load_button"
-                        fixed:
-                            text ( "%s." % i
-                                   + FileTime(i, format=' %d.%m.%y, %H:%M', empty=" "+translation["Empty_slot"][_preferences.language])
-                                   + "\n" +FileSaveName(i)):
-                                xpos 15
-                                ypos 15
+                text who id "who" xpos 180 ypos 935 size 28 line_spacing 2    
