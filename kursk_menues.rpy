@@ -6,7 +6,7 @@ screen k_main_menu:
         auto gFile("screens/menu/nachat_2_%s.png")
         xpos 55
         ypos 200
-        action [ Jump ('k_main') ]
+        action [ Jump ('k_prolog') ]
     imagebutton:
         auto gFile("screens/menu/load_2_%s.png")
         xpos 55
@@ -42,7 +42,7 @@ screen dpa_menu_selector:
         yfill True
         action Return()
     
-    add getFile("image/screens/menu/lil_menu_back.png"):
+    add gFile("image/screens/menu/lil_menu_back.png"):
         xalign 0.5
         yalign 0.5
 
@@ -153,3 +153,34 @@ screen dpa_Load:
                                    + "\n" +FileSaveName(i)):
                                 xpos 15
                                 ypos 15
+
+
+
+screen dpa_say_gui_reborn:
+    window background None id "window":
+        if persistent.font_size == "large":
+            add gFileSayGui("dialog_box_large.png") xpos -5 ypos 863
+
+            if not config.skipping:
+                imagebutton auto gFileSayGui("forward_l_%s.png") xpos 1750 ypos 912 action Skip()
+            else:
+                imagebutton auto gFileSayGui("forward_l_f_%s.png") xpos 1750 ypos 912 action Skip()
+
+            imagebutton auto gFileSayGui("backward_l_%s.png") xpos -10 ypos 912 action ShowMenu("text_history")
+
+            text what id "what" xpos 155 ypos 934 xmaximum 1610 size 35 line_spacing 2
+            if who:
+                text who id "who" xpos 180 ypos 895 size 35 line_spacing 2
+        elif persistent.font_size == "small":
+            add gFileSayGui("dialog_box.png") xpos -5 ypos 913
+
+            if not config.skipping:
+                imagebutton auto gFileSayGui("forward_%s.png") xpos 1816 ypos 972 action Skip()
+            else:
+                imagebutton auto gFileSayGui("forward_f_%s.png") xpos 1816 ypos 972 action Skip()
+
+            imagebutton auto gFileSayGui("backward_%s.png") xpos 14 ypos 972 action ShowMenu("text_history")
+
+            text what id "what" xpos 155 ypos 969 xmaximum 1610 size 28 line_spacing 2
+            if who:
+                text who id "who" xpos 180 ypos 935 size 28 line_spacing 2

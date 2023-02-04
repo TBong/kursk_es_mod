@@ -1,6 +1,7 @@
 init 2:
 
     #Изображения
+    image kp = gFile("cg/kp.jpg")
     image kursk1 = gFile("screens/menu/kursk_1.jpg")
     image Dst dst1 = gFile("gui/Dust1.png")
     image Dst dst2 = gFile("gui/Dust2.png")

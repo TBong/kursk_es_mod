@@ -21,15 +21,15 @@ init -1 python:
 
     def updVisual():
         renpy.display.screen.screens[("say",None)] = renpy.display.screen.screens[("dpa_say_gui_reborn",None)]
-        renpy.display.screen.screens[("game_menu_selector",None)] = renpy.display.screen.screens[("dpa_menu_selector",None)]
-        renpy.display.screen.screens[("choice",None)] = renpy.display.screen.screens[("dpa_choice",None)]
-        renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("dpa_nvl",None)]
+        #renpy.display.screen.screens[("game_menu_selector",None)] = renpy.display.screen.screens[("dpa_menu_selector",None)]
+        #renpy.display.screen.screens[("choice",None)] = renpy.display.screen.screens[("dpa_choice",None)]
+        #renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("dpa_nvl",None)]
     
-    def rollbackVisual(*arg):
-        renpy.display.screen.screens[("say",None)] = renpy.display.screen.screens[("dpa_say_gui_old",None)]
-        renpy.display.screen.screens[("game_menu_selector",None)] = renpy.display.screen.screens[("dpa_game_menu_selector_old",None)]
-        renpy.display.screen.screens[("choice",None)] = renpy.display.screen.screens[("dpa_choice_old",None)]
-        renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("dpa_nvl_old",None)]
+    #def rollbackVisual(*arg):
+        #renpy.display.screen.screens[("say",None)] = renpy.display.screen.screens[("dpa_say_gui_old",None)]
+        #renpy.display.screen.screens[("game_menu_selector",None)] = renpy.display.screen.screens[("dpa_game_menu_selector_old",None)]
+        #renpy.display.screen.screens[("choice",None)] = renpy.display.screen.screens[("dpa_choice_old",None)]
+        #renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("dpa_nvl_old",None)]
 
     def toDefaultSettings(*arg):
         Call("initVars")
@@ -38,6 +38,9 @@ init -1 python:
     def dpaNewChapter(dayNum, chapterName):
         dpaSetChapter(dayNum, chapterName)
         updVisual()    
+
+    def gFileSayGui(path):
+        return gFile("screens/dialog/"+path)    
 
 init python:
     default_k_path = "mods/kursk_es_mod/materials/"
@@ -53,10 +56,12 @@ init python:
     
 
 label k_main:
+    $ updVisual()
     call k_menu
     return
 
 label k_menu:
+    $ updVisual()
     $ new_chapter(0, u"Меню КУРСК")
     scene kursk1 with dissolve2
     call screen k_main_menu with dissolve
