@@ -26,4 +26,11 @@ init python:
     
 
 label k_main:
+    call k_menu
+    return
+
+label k_menu:
+    $ new_chapter(0, u"Меню КУРСК")
+    scene kursk1 with dissolve2
+    call screen k_main_menu with dissolve
     return
