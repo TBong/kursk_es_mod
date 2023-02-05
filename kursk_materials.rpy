@@ -33,9 +33,5 @@ init 2:
     $ furore = gFile("font/Furore.ttf")
 
     #Музыка
-<<<<<<< HEAD
-    $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
-=======
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
     $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
->>>>>>> eb750d69469131ce1b2c24aece0697e335363aa9
