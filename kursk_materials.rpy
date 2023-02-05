@@ -4,8 +4,12 @@ init 2:
     image air_car = gFile("cg/air_car.jpg")
     image vmf = gFile("cg/vmf.jpg")
     image kp = gFile("cg/kp.jpg")
+    image k141_parade = gFile("cg/k141_parade.jpg")
+    image vmf_pride = gFile("cg/vmf_pride.jpg")
     image kursk1 = gFile("screens/menu/kursk_1.jpg")
-    image kursk2 = gFile("cg/kursk2.jpg")
+    image kursk2 = gFile("cg/kursk_2.jpg")
+    image kursk3 = gFile("cg/kursk_3.jpg")
+    image kursk4 = gFile("cg/kursk_4.jpg")
 
     #Музыка
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
@@ -29,4 +33,9 @@ init 2:
     $ furore = gFile("font/Furore.ttf")
 
     #Музыка
+<<<<<<< HEAD
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
+=======
+    $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
+    $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
+>>>>>>> eb750d69469131ce1b2c24aece0697e335363aa9
