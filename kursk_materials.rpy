@@ -23,7 +23,6 @@ init 2:
         contains:
             SnowBlossom("Dst dst2", 20, 50, (-30,-25), (-30,30), 25, False, True)
         contains:
-<<<<<<< HEAD
             SnowBlossom("Dst dst2", 20, 50, (25,30), (-30,30), 25, False, True)
 
     #Шрифт
@@ -31,6 +30,3 @@ init 2:
 
     #Музыка
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
-=======
-            SnowBlossom("Dst dst2", 20, 50, (25,30), (-30,30), 25, False, True)
->>>>>>> 216f435e47fe9af85735e5b87a6494defe1cdc54

@@ -251,3 +251,54 @@ screen k_say_gui_reborn:
             text what id "what" xpos 155 ypos 969 xmaximum 1610 size 28 line_spacing 2
             if who:
                 text who id "who" xpos 180 ypos 935 size 28 line_spacing 2    
+
+screen dpa_nvl:
+    window:
+        background Frame(gFile("screens/menu/choice.png"),50,50)
+        xfill True
+        yfill True
+        yalign 0.5
+        left_padding 125
+        right_padding 125
+        bottom_padding 100
+        top_padding 100
+        vbox:
+            for who, what, who_id, what_id, window_id  in dialogue:
+                window:
+                    id window_id
+                    hbox:
+                        spacing 10
+                        if persistent.font_size == "large":
+                            if who is not None:
+                                text who:
+                                    id who_id
+                                    size 29
+                                    line_spacing 2
+                                    
+                            text what:
+                                id what_id
+                                size 26
+                                line_spacing 3
+                                
+                                color "#ffffff"
+
+                        elif persistent.font_size == "small":
+                            if who is not None:
+                                text who:
+                                    id who_id
+                                    size 28
+                                    
+                                    line_spacing 2
+                
+                            text what:
+                                id what_id
+                                size 24
+                                
+                                line_spacing 3
+                                kerning 1
+                                color "#ffffff" 
+    if not config.skipping:
+        imagebutton auto gFileSayGui("forward_%s.png") xalign 0.95 ypos 950 action Skip()
+    else:
+        imagebutton auto gFileSayGui("forward_f_%s.png") xalign 0.95 ypos 950 action Skip()
+    imagebutton auto gFileSayGui("backward_%s.png") xalign 0.05 ypos 950 action ShowMenu("text_history")

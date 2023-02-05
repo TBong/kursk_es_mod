@@ -19,20 +19,20 @@ init -1 python:
     def saveOldVisual():
         renpy.display.screen.screens[("k_say_gui_old",None)] = renpy.display.screen.screens[("say",None)]
         renpy.display.screen.screens[("k_game_menu_selector_old",None)] = renpy.display.screen.screens[("game_menu_selector",None)]
-        #renpy.display.screen.screens[("dpa_nvl_old",None)] = renpy.display.screen.screens[("nvl",None)]
+        renpy.display.screen.screens[("dpa_nvl_old",None)] = renpy.display.screen.screens[("nvl",None)]
         #renpy.display.screen.screens[("dpa_choice_old",None)] = renpy.display.screen.screens[("choice",None)]
 
     def updVisual():
         renpy.display.screen.screens[("say",None)] = renpy.display.screen.screens[("k_say_gui_reborn",None)]
         renpy.display.screen.screens[("game_menu_selector",None)] = renpy.display.screen.screens[("k_menu_selector",None)]
         #renpy.display.screen.screens[("choice",None)] = renpy.display.screen.screens[("dpa_choice",None)]
-        #renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("dpa_nvl",None)]
+        renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("dpa_nvl",None)]
     
     def rollbackVisual(*arg):
         renpy.display.screen.screens[("say",None)] = renpy.display.screen.screens[("k_say_gui_old",None)]
         renpy.display.screen.screens[("game_menu_selector",None)] = renpy.display.screen.screens[("k_game_menu_selector_old",None)]
         #renpy.display.screen.screens[("choice",None)] = renpy.display.screen.screens[("dpa_choice_old",None)]
-        #renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("dpa_nvl_old",None)]
+        renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("dpa_nvl_old",None)]
     
     def dpaNewChapter(dayNum, chapterName):
         dpaSetChapter(dayNum, chapterName)
