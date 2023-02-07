@@ -12,6 +12,18 @@ init 1:
         repeat
 
 init -1 python:
+    def menu_num_change():
+        global menu_back_num 
+        if menu_back_num  == 0:
+            menu_back_num = 1
+        elif menu_back_num == 1:
+            menu_back_num = 2
+        else:
+            menu_back_num = 0
+
+    def GetRanImg(imgs):
+        num = renpy.random.randint(0, len(imgs)-1)
+        return imgs[num]
 
     def gFile(file):
         return default_k_path + file
@@ -83,8 +95,8 @@ init 2 python:
 
 
 init python:
+
     default_k_path = "mods/kursk_es_mod/materials/"
-    
     
     renpy.music.register_channel("sound_1",loop=False)
     renpy.music.register_channel("sound_2",loop=False)
@@ -101,7 +113,10 @@ label k_main:
 
 label k_menu:
     $ updVisual()
-    $ new_chapter(0, u"Меню КУРСК")
-    scene kursk1 with dissolve2
+    $ new_chapter(0, u"Меню")
+    scene menu_back
+    play music lowcostdrammas volume 0.25 fadein 7.0
+    show DustB
+    with dissolve2
     call screen k_main_menu with dissolve
     return
