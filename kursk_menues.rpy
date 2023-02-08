@@ -11,7 +11,7 @@ screen k_main_menu:
         auto gFile("screens/menu/load_2_%s.png")
         xpos 55
         ypos 400
-        action ShowMenu('k_load')
+        action ShowMenu('k_Load')
     imagebutton:
         xpos 55
         ypos 600
@@ -42,7 +42,7 @@ screen k_menu_selector:
         yfill True
         action Return()
     
-    add gFile("menu/lil_menu_back.png"):
+    add gFile("screens/menu/lil_menu_back.png"):
         xalign 0.5
         yalign 0.5
 
@@ -58,14 +58,14 @@ screen k_menu_selector:
         yalign 0.40
         text_style "text_save_load"
         style "button_none"
-        action ShowMenu('dpa_Save')
+        action ShowMenu('k_Save')
     
     textbutton ["Загрузка"]:
         xalign 0.5
         yalign 0.50
         text_style "text_save_load"
         style "button_none"
-        action ShowMenu('dpa_Load')
+        action ShowMenu('k_Load')
     
     textbutton ["Настройки"]:
         xalign 0.5
@@ -89,7 +89,7 @@ screen k_menu_selector:
         action [ Function(rollbackVisual), Return() ]
 
 #Меню загрузки
-screen k_load:
+screen k_Load:
     tag menu
     modal True
     window:
@@ -154,6 +154,7 @@ screen k_load:
                                    + "\n" +FileSaveName(i)):
                                 xpos 15
                                 ypos 15
+
 
 #Меню сохранения
 screen k_Save:
@@ -251,7 +252,7 @@ screen k_say_gui_reborn:
             if who:
                 text who id "who" xpos 180 ypos 935 size 28 line_spacing 2    
 
-screen dpa_nvl:
+screen k_nvl:
     window:
         background Frame(gFile("screens/menu/choice.png"),50,50)
         xfill True
@@ -301,3 +302,36 @@ screen dpa_nvl:
     else:
         imagebutton auto gFileSayGui("forward_f_%s.png") xalign 0.95 ypos 950 action Skip()
     imagebutton auto gFileSayGui("backward_%s.png") xalign 0.05 ypos 950 action ShowMenu("text_history")
+
+#Экран диалога старый, без него не работает(((
+screen k_say_gui:
+    window background None id "window":
+        if persistent.font_size == "large":
+            imagebutton auto getFileSayGui("gray/backward_%s.png") xpos 38 ypos 949 action ShowMenu("text_history") #тут свой путь
+            add getFileSayGui("gray/dialogue_box.png") xpos 174 ypos 916 #тут свой путь
+            imagebutton auto getFileSayGui("gray/hide_%s.png") xpos 1508 ypos 933 action HideInterface() #тут свой путь
+            imagebutton auto getFileSayGui("gray/save_%s.png") xpos 1567 ypos 933 action ShowMenu('k_Save') #тут свой путь
+            imagebutton auto getFileSayGui("gray/menu_%s.png") xpos 1625 ypos 933 action ShowMenu('game_menu_selector') #тут свой путь
+            imagebutton auto getFileSayGui("gray/load_%s.png") xpos 1682 ypos 933 action ShowMenu('k_Load') #тут свой путь
+            if not config.skipping:
+                imagebutton auto getFileSayGui("gray/forward_%s.png") xpos 1735 ypos 949 action Skip() #тут свой путь
+            else:
+                imagebutton auto getFileSayGui("gray/fast_forward_%s.png") xpos 1735 ypos 949 action Skip() #тут свой путь
+            text what id "what" xpos 194 ypos 959 xmaximum 1541 size 28 line_spacing 2
+            if who:
+                text who id "who" xpos 194 ypos 925 size 28 line_spacing 2
+        elif persistent.font_size == "small":
+            imagebutton auto getFileSayGui("gray/backward_%s.png") xpos 38 ypos 949 action ShowMenu("text_history") #тут свой путь
+            add getFileSayGui("gray/dialogue_box.png") xpos 174 ypos 916 #тут свой путь
+            imagebutton auto getFileSayGui("gray/hide_%s.png") xpos 1508 ypos 933 action HideInterface() #тут свой путь
+            imagebutton auto getFileSayGui("gray/save_%s.png") xpos 1567 ypos 933 action ShowMenu('k_Save') #тут свой путь
+            imagebutton auto getFileSayGui("gray/menu_%s.png") xpos 1625 ypos 933 action ShowMenu('game_menu_selector') #тут свой путь
+            imagebutton auto getFileSayGui("gray/load_%s.png") xpos 1682 ypos 933 action ShowMenu('k_Load') #тут свой путь
+            if not config.skipping:
+                imagebutton auto getFileSayGui("gray/forward_%s.png") xpos 1735 ypos 949 action Skip() #тут свой путь
+            else:
+                imagebutton auto getFileSayGui("gray/fast_forward_%s.png") xpos 1735 ypos 949 action Skip() #тут свой путь
+            text what id "what" xpos 194 ypos 959 xmaximum 1541 size 28 line_spacing 2
+            if who:
+                text who id "who" xpos 194 ypos 925 size 28 line_spacing 2
+

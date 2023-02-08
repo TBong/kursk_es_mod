@@ -17,7 +17,7 @@ init 2:
     image kursk6 = gFile("cg/kursk_6.jpg")
 
     #Музыка
-    $ entsan = gFile("sound/music/EntSan.mp3")
+    $ entsan = gFile("sound/music/EnterSandman.mp3")
     $ lowcostdrammas = gFile("sound/music/lowcostdrammas.mp3")
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
     $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
