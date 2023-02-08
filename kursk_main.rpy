@@ -1,5 +1,6 @@
 label k_prolog:
     stop music fadeout 3
+    scene black with dissolve2
     $ new_chapter(0, u"Курск: Предыстория")
     $ updVisual()
     #play music
@@ -40,6 +41,7 @@ label k_before:
     "Моряки-подводники приняли лодку, провели осмотр всех отсеков, запустили реакторы."
     window hide
     scene kp with dissolve2
+    play ambience insideKursk fadein 2
     window show
     "Командиры проверяют дкументы, радисты сверяют маршруты, устанавливают связь с отсеками и другими кораблями."
     "Помимо 111-ти человек штатного экипажа, во время проведения операции на подлодке будут находиться ещё 7 других специалистов: 5 офицеров штаба дивизии, военпред и инженер с завода «Дагдизель»."
@@ -48,7 +50,7 @@ label k_before:
     "Ночь с 9-го на 10-ое число моряки проводят непосредственно на подлодке."
     window hide
     scene black with Dissolve(3)
-    #музыка
+    play music entsan volume 0.2 fadein 2
     scene rest with Dissolve(3)
     window show
     "В одной из жилых кают, где-то в глубине субмарины, вокруг телевизора собралась небольшая группа подводников."

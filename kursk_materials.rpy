@@ -20,6 +20,7 @@ init 2:
     $ entsan = gFile("sound/music/EnterSandman.mp3")
     $ lowcostdrammas = gFile("sound/music/lowcostdrammas.mp3")
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
+    $ insideKursk = gFile("sound/music/insideKursk.mp3")
     $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
 
     #Шрифт
