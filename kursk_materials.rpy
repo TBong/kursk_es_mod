@@ -17,6 +17,7 @@ init 2:
     image kursk6 = gFile("cg/kursk_6.jpg")
 
     #Музыка
+    $ entsan = gFile("sound/music/EntSan.mp3")
     $ lowcostdrammas = gFile("sound/music/lowcostdrammas.mp3")
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
     $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
@@ -28,7 +29,7 @@ init 2:
     $ hor = Character (u'Моряки', color = "#1f5790", what_color = "FFFFFF")
     $ bk = Character (u'Быков', color = "#4ea0f1", what_color = "FFFFFF")
     $ sk = Character (u'Симонов', color = "#4ea0f1", what_color = "FFFFFF")
-    $ su = Character (u'Капитан', color = "#4ea0f1", what_color = "FFFFFF")
+    $ su = Character (u'Капитан', color = "#0721eb", what_color = "FFFFFF")
 
     #GUI
     image Dst dst1 = gFile("gui/Dust1.png")

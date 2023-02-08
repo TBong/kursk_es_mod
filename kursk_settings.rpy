@@ -3,6 +3,9 @@ init 1:
     define config.developer = True
     $ mods["k_main"]=u"{font=[patternFont]}Курск"
 
+    define gui.text_color = "#ffffff"
+    define gui.interface_text_color = "#ffffff"
+
     transform k_shaking:
         anchor (0.0, 0.0) pos (0.0, 0.0)
         linear 0.2 pos (-5, -5)
