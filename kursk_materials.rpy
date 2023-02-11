@@ -29,6 +29,7 @@ init 2:
 
     #Звуки
     $ insideKursk = gFile("sound/sfx/insideKursk.mp3")
+    $ rocketFire = gFile("sound/sfx/rocketFire.mp3")
 
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
