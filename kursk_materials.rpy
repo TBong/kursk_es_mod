@@ -15,13 +15,20 @@ init 2:
     image kursk4 = gFile("cg/kursk_4.jpg")
     image kursk5 = gFile("cg/kursk_5.jpg")
     image kursk6 = gFile("cg/kursk_6.jpg")
+    image captains = gFile("cg/captains.jpg")
+    image cafeteria = gFile("cg/cafeteria.jpg")
+    image fire_torpeda1 = gFile("cg/fire_torpeda1.jpg")
+    image fire_torpeda2 = gFile("cg/fire_torpeda2.jpg")
+    image fire_torpeda3 = gFile("cg/fire_torpeda3.jpg")
 
     #Музыка
     $ entsan = gFile("sound/music/EnterSandman.mp3")
     $ lowcostdrammas = gFile("sound/music/lowcostdrammas.mp3")
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
-    $ insideKursk = gFile("sound/music/insideKursk.mp3")
     $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
+
+    #Звуки
+    $ insideKursk = gFile("sound/sfx/insideKursk.mp3")
 
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
@@ -29,8 +36,14 @@ init 2:
     #Персонажи
     $ hor = Character (u'Моряки', color = "#1f5790", what_color = "FFFFFF")
     $ bk = Character (u'Быков', color = "#4ea0f1", what_color = "FFFFFF")
-    $ sk = Character (u'Симонов', color = "#4ea0f1", what_color = "FFFFFF")
+    $ sk = Character (u'Симонов', color = "#42688f", what_color = "FFFFFF")
     $ su = Character (u'Капитан', color = "#0721eb", what_color = "FFFFFF")
+    $ mo = Character (u'Мотин', color = "#6873c7", what_color = "FFFFFF")
+    $ adm = Character (u'Адмирал', color = "#D4AF37", what_color = "FFFFFF")
+    $ s_adm = Character (u'Вице-Адмирал', color = "#ffffff", what_color = "FFFFFF")
+    $ dag = Character (u'Инженер', color = "#285512", what_color = "FFFFFF")
+    $ torp = Character (u'Торпедист', color = "#8c8e8f", what_color = "FFFFFF")
+    $ radio = Character (u'Динамик', color = "#ff0000", what_color = "FFFFFF")
 
     #GUI
     image Dst dst1 = gFile("gui/Dust1.png")
