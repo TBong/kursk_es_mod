@@ -47,6 +47,8 @@ init 2:
     $ radio = Character (u'Динамик', color = "#ff0000", what_color = "FFFFFF")
 
     #GUI
+    image discord_logo = gFile("gui/discord_url_logo.png")
+    image steam_logo = gFile("gui/steam_url_logo.png")
     image Dst dst1 = gFile("gui/Dust1.png")
     image Dst dst2 = gFile("gui/Dust2.png")
     image DustB:
@@ -61,9 +63,9 @@ init 2:
         contains:
             SnowBlossom("Dst dst2", 20, 50, (25,30), (-30,30), 25, False, True)
 
-    $ menu_back_num = 0
-    image menu_back = ConditionSwitch(
-        "menu_back_num==0","kursk6",
-        "menu_back_num==1","kursk2",
-        True, "kursk1"
-    )
+    #$ menu_back_num = 0
+    #image menu_back = ConditionSwitch(
+    #    "menu_back_num==0","kursk6",
+    #    "menu_back_num==1","kursk2",
+    #    True, "kursk1"
+    #)

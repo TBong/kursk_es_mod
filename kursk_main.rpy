@@ -107,8 +107,8 @@ label k_sailing:
     "Прикомандованный начальством инженер находится в отсеке №1, и вместе с экипажем проверяет торпедный боезапас."
     "Почти в то же время запускается ядерный реактор."
     window hide
-    stop ambience fadeout 2
-    scene black with dissolve2
+    stop ambience fadeout 5
+    scene black with Dissolve(5)
     $ renpy.movie_cutscene(gFile("video/reactor.webm"))
     play ambience insideKursk fadein 5 volume 0.9
     scene cafeteria with Dissolve(5)
@@ -116,9 +116,9 @@ label k_sailing:
     "Через час командиры отсеков докладывают капитану о проведённой работе."
     "В ходе небольшого брифинга ни о каких нарушениях в работе систем подлодки заявлено не было."
     "Руководством было дано разрешение старт на учений."
+    window hide
     stop ambience fadeout 5
     scene black with Dissolve(5)
-    window hide
     jump k_sailing_video
 
 label k_sailing_video:
@@ -155,8 +155,10 @@ label k_after_sailing:
     torp "Отлично."
     radio "Экипажу приготовиться к пуску ракеты."
     radio "Пуск через: 3, {w=0.5}2, {w=0.5}1."
-    play sound rocketFire
     window hide
+    scene black
+    show torpeda1 at k_shaking
+    play sound rocketFire
     pause (1)
     window show
     radio "Пуск успешный."
@@ -167,7 +169,7 @@ label k_after_sailing:
     scene kp with Dissolve(5)
     window show
     su "C Петра Великого докладывают, об успешном поражении цели, молодцы парни!"
-    su "Погружение до 40 метров, взять курс 130 градусов, установить скорость 25 узлов."
+    su "Погружение до 40 метров, взять курс на 130 градусов, установить скорость 25 узлов."
     sk "Есть погружение 40, курс 130, скорость 25!"
 
 

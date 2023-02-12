@@ -18,7 +18,7 @@ screen k_main_menu:
         auto gFile("screens/menu/settings_2_%s.png")
         action [ ShowMenu('preferences') ]
     imagebutton:
-        auto  gFile("screens/menu/exit_2_%s.png")
+        auto gFile("screens/menu/exit_2_%s.png")
         xpos 55
         ypos 800
         action [MainMenu() ]
@@ -26,7 +26,13 @@ screen k_main_menu:
         xpos 1548
         ypos 80
         size 118
-    timer 10.0 repeat True action Function(menu_num_change)
+    add gFile("gui/discord_url_logo.png"):
+        xalign 0.92
+        yalign 0.98
+    add gFile("gui/steam_url_logo.png"):
+        xalign 0.98
+        yalign 0.98
+    #timer 10.0 repeat True action Function(menu_num_change)
 
 #Маленькое меню
 screen k_menu_selector:
