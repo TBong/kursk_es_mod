@@ -138,7 +138,7 @@ label k_after_sailing:
     s_adm "Неудивительно, почему американцы готовы платить нам, только бы мы их утилизировали."
     window hide
     stop ambience fadeout 5
-    play sound_loop insideKursk fadein 5
+    play ambience insideKursk fadein 5
     scene black with Dissolve(5)
     scene kp with Dissolve(5)
     window show
@@ -171,6 +171,42 @@ label k_after_sailing:
     su "C Петра Великого докладывают, об успешном поражении цели, молодцы парни!"
     su "Погружение до 40 метров, взять курс на 130 градусов, установить скорость 25 узлов."
     sk "Есть погружение 40, курс 130, скорость 25!"
+    window hide
+    stop ambience fadeout 5
+    scene black with Dissolve(5)
+    jump k_norv_base_video
+
+label k_norv_base_video:
+    $ renpy.movie_cutscene(gFile("video/norv_base.webm"))
+    jump norv_base
+
+label norv_base:
+    $ new_chapter(4, u"Курск: Норвегия, «Оласверн»")
+    $ updVisual()
+    play ambience inside_norv fadein 5
+    scene norv1 with Dissolve(5)
+    window show
+    com "Русские снова проводят учения в баренцевом море?{color=#8c8e8f}{vspace=5}{space=20}-{space=20}Driver Russerne øvelser i Barentshavet igjen?"
+    nrv "Да, сэр.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Ja, sir."
+    com "В каком составе на этот раз?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}I hvilken sammensetning denne gangen?"
+    nrv "Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск», несколько эсминцев и другие корабли.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Hangarskip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kursk», flere destroyere og andre skip."
+    com "Оскар II? Покажите на радарах.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Oscar II? Vis det på radarene."
+    nrv "Невозможно. Она невидимая, бесшумная.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Umulig. Det er usynlig, stille."
+    com "Плохо. Продолжайте наблюдение.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Dårlig. Fortsett å se."
+    window hide
+    stop ambience fadeout 5
+    play ambience insideKursk fadein 5
+    scene black with Dissolve(5)
+    scene kp with Dissolve(5)
+    window show
+    sk "Корабельная группа готова к пуску торпеды."
+    
+
+
+
+
+
+    
 
 
 

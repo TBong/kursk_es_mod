@@ -26,12 +26,6 @@ screen k_main_menu:
         xpos 1548
         ypos 80
         size 118
-    add gFile("gui/discord_url_logo.png"):
-        xalign 0.92
-        yalign 0.98
-    add gFile("gui/steam_url_logo.png"):
-        xalign 0.98
-        yalign 0.98
     #timer 10.0 repeat True action Function(menu_num_change)
 
 #Маленькое меню

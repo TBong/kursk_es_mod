@@ -20,6 +20,8 @@ init 2:
     image fire_torpeda1 = gFile("cg/fire_torpeda1.jpg")
     image fire_torpeda2 = gFile("cg/fire_torpeda2.jpg")
     image fire_torpeda3 = gFile("cg/fire_torpeda3.jpg")
+    image norv1 = gFile("cg/norv1.jpg")
+    image norv2 = gFile("cg/norv2.jpg")
 
     #Музыка
     $ entsan = gFile("sound/music/EnterSandman.mp3")
@@ -28,8 +30,9 @@ init 2:
     $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
 
     #Звуки
-    $ insideKursk = gFile("sound/sfx/insideKursk.mp3")
-    $ rocketFire = gFile("sound/sfx/rocketFire.mp3")
+    $ inside_norv = gFile("sound/sfx/inside_norv.mp3")
+    $ insideKursk = gFile("sound/sfx/inside_kursk.mp3")
+    $ rocketFire = gFile("sound/sfx/rocketfire.mp3")
 
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
@@ -45,10 +48,11 @@ init 2:
     $ dag = Character (u'Инженер', color = "#285512", what_color = "FFFFFF")
     $ torp = Character (u'Торпедист', color = "#8c8e8f", what_color = "FFFFFF")
     $ radio = Character (u'Динамик', color = "#ff0000", what_color = "FFFFFF")
+    $ com = Character (u'Главнокомандующий', color = "#741111", what_color = "FFFFFF")
+    $ nrv = Character (u'Норвежский офицер', color = "#0b1984", what_color = "FFFFFF")
+    
 
     #GUI
-    image discord_logo = gFile("gui/discord_url_logo.png")
-    image steam_logo = gFile("gui/steam_url_logo.png")
     image Dst dst1 = gFile("gui/Dust1.png")
     image Dst dst2 = gFile("gui/Dust2.png")
     image DustB:
