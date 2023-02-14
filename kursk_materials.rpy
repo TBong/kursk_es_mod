@@ -66,10 +66,3 @@ init 2:
             SnowBlossom("Dst dst2", 20, 50, (-30,-25), (-30,30), 25, False, True)
         contains:
             SnowBlossom("Dst dst2", 20, 50, (25,30), (-30,30), 25, False, True)
-
-    #$ menu_back_num = 0
-    #image menu_back = ConditionSwitch(
-    #    "menu_back_num==0","kursk6",
-    #    "menu_back_num==1","kursk2",
-    #    True, "kursk1"
-    #)
