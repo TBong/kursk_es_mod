@@ -119,7 +119,6 @@ label k_main:
 label k_menu:
     $ updVisual()
     $ new_chapter(0, u"Меню")
-    #scene menu_back
     scene kursk2 with dissolve
     play music lowcostdrammas volume 0.25 fadein 7.0
     show DustB
