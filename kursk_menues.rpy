@@ -26,7 +26,6 @@ screen k_main_menu:
         xpos 1548
         ypos 80
         size 118
-    #timer 10.0 repeat True action Function(menu_num_change)
 
 #Маленькое меню
 screen k_menu_selector:
