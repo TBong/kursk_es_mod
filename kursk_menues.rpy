@@ -24,7 +24,7 @@ screen k_main_menu:
         action [MainMenu() ]
     text "{font=[patternFont]}{color=#ac0c0c}КУРСК":
         xpos 1548
-        ypos 80
+        ypos 50
         size 118
 
 #Маленькое меню

@@ -3,11 +3,11 @@ label k_prolog:
     scene black with dissolve2
     $ new_chapter(0, u"Курск: Предыстория")
     $ updVisual()
-    #play music
+    #play music 
     scene kursk3 with Dissolve(5)
     pause (1)
     $ set_mode_nvl()
-    "К-141 «Курск» – российский атомный подводный ракетоносный крейсер проекта 949А «Антей». Заложен на «Севмаше» в 1990 году, спущен на воду в мае, принят в эксплуатацию в декабре 1994 года."
+    "{font=[patternFont]}{color=#900}К-141 «Курск»{/font}{/color} – Российский атомный подводный ракетоносный крейсер проекта 949А «Антей». Заложен на «Севмаше» в 1990 году, спущен на воду в мае, принят в эксплуатацию в декабре 1994 года."
     "Свое почётное название подлодка получила в честь подвига советского народа на Курской дуге в годы Великой Отечественной войны. С 1995 по 2000 год находилась в составе Северного флота ВМФ России. пункт базирования — Видяево."
     scene air_car with dissolve2
     pause (1)
@@ -186,7 +186,7 @@ label norv_base:
     play ambience inside_norv fadein 5
     scene norv1 with Dissolve(5)
     window show
-    com "Русские снова проводят учения в баренцевом море?{color=#8c8e8f}{vspace=5}{space=20}-{space=20}Driver Russerne øvelser i Barentshavet igjen?"
+    com "Русские снова проводят учения в баренцевом море?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Driver Russerne øvelser i Barentshavet igjen?"
     nrv "Да, сэр.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Ja, sir."
     com "В каком составе на этот раз?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}I hvilken sammensetning denne gangen?"
     nrv "Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск», несколько эсминцев и другие корабли.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Hangarskip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kursk», flere destroyere og andre skip."

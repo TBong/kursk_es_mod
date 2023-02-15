@@ -1,7 +1,7 @@
 init 1:
 
     define config.developer = True
-    $ mods["k_main"]=u"{font=[patternFont]}Курск"
+    $ mods["k_main"]=u"{font=[patternFont]}{color=#741111}Курск"
 
     define gui.text_color = "#ffffff"
     define gui.interface_text_color = "#ffffff"
@@ -98,7 +98,6 @@ init 2 python:
     style.text_select_track.insensitive_color        = "#9e9e9e"
     style.text_select_track.size = 30
 
-
 init python:
 
     default_k_path = "mods/kursk_es_mod/materials/"
@@ -106,10 +105,6 @@ init python:
     renpy.music.register_channel("sound_1",loop=False)
     renpy.music.register_channel("sound_2",loop=False)
     renpy.music.register_channel("sound_3",loop=False)
-
-    patternFont = gFile("font/18035.otf")
-
-    
 
 label k_main:
     $ updVisual()
@@ -120,7 +115,7 @@ label k_menu:
     $ updVisual()
     $ new_chapter(0, u"Меню")
     scene kursk2 with dissolve
-    play music lowcostdrammas volume 0.25 fadein 7.0
+    play music longing
     show DustB
     call screen k_main_menu with dissolve
     return

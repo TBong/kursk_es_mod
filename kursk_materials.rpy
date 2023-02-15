@@ -28,6 +28,8 @@ init 2:
     $ lowcostdrammas = gFile("sound/music/lowcostdrammas.mp3")
     $ sos_lodka = gFile("sound/music/sos_lodka.mp3")
     $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
+    $ violence = gFile("sound/music/MacQuayle_Violence.mp3")
+    $ longing = gFile("sound/music/Santaolalla_Longing.mp3")
 
     #Звуки
     $ inside_norv = gFile("sound/sfx/inside_norv.mp3")
@@ -36,6 +38,7 @@ init 2:
 
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
+    $ patternFont = gFile("font/18035.otf")
 
     #Персонажи
     $ hor = Character (u'Моряки', color = "#1f5790", what_color = "FFFFFF")
@@ -51,7 +54,6 @@ init 2:
     $ com = Character (u'Главнокомандующий', color = "#741111", what_color = "FFFFFF")
     $ nrv = Character (u'Норвежский офицер', color = "#0b1984", what_color = "FFFFFF")
     
-
     #GUI
     image Dst dst1 = gFile("gui/Dust1.png")
     image Dst dst2 = gFile("gui/Dust2.png")
