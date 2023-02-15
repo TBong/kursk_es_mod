@@ -4,6 +4,7 @@ label k_prolog:
     $ new_chapter(0, u"Курск: Предыстория")
     $ updVisual()
     #play music 
+    play music fon1 fadein 3
     scene kursk3 with Dissolve(5)
     pause (1)
     $ set_mode_nvl()
@@ -26,6 +27,7 @@ label k_prolog:
     "До этого, 10 августа 2000 года, согласно плану учений Северного флота, «Курск» должен был выйти море для выполнения учебно-боевого задания недалеко от Кольского залива."
     "С этого и началась трагическая история крупнейшей катастрофы в послевоенной истории советского и российского подводного флота."
     nvl clear
+    stop music fadeout 3
     scene black with Dissolve(5)
     jump k_9aug_video
 
@@ -36,10 +38,12 @@ label k_9aug_video:
 label k_before:
     $ new_chapter(1, u"Курск: Подготовка лодки и экипажа к учениям. Североморск, 9 августа")
     $ updVisual()
+    play music chayki fadein 2
     scene kursk5 with Dissolve(5)
     "9 августа, за день до назначенной даты, в порту идёт подготовка АПЛ к учениям."
     "Моряки-подводники приняли лодку, провели осмотр всех отсеков."
     window hide
+    stop music fadeout 2
     scene kp with dissolve2
     play ambience insideKursk fadein 2 volume 0.3
     window show
@@ -200,32 +204,3 @@ label norv_base:
     scene kp with Dissolve(5)
     window show
     sk "Корабельная группа готова к пуску торпеды."
-    
-
-
-
-
-
-    
-
-
-
-
-
-    
-
-
-    
-
-
-    
-    
-
-
-
-
-
-
-
-
-    

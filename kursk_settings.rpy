@@ -5,6 +5,7 @@ init 1:
 
     define gui.text_color = "#ffffff"
     define gui.interface_text_color = "#ffffff"
+    define config.mouse['default'] = [ ( gFile("gui/newCursor.png"), 0, 0) ]
 
     transform k_shaking:
         anchor (0.0, 0.0) pos (0.0, 0.0)

@@ -35,7 +35,8 @@ init 2:
     $ inside_norv = gFile("sound/sfx/inside_norv.mp3")
     $ insideKursk = gFile("sound/sfx/inside_kursk.mp3")
     $ rocketFire = gFile("sound/sfx/rocketfire.mp3")
-
+    $ chayki = gFile("sound/sfx/chayki.mp3")
+    $ fon1 = gFile("sound/sfx/fon1.mp3")
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
     $ patternFont = gFile("font/18035.otf")
