@@ -92,7 +92,7 @@ screen k_Load:
     tag menu
     modal True
     window:
-        add "kursk1":
+        add "kursk2":
             xpos -6
             ypos -6
 
@@ -160,7 +160,7 @@ screen k_Save:
     tag menu
     modal True
     window:
-        add "menu_back":
+        add "kursk2":
             xpos -6
             ypos -6
 
