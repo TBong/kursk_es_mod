@@ -201,7 +201,7 @@ label norv_base:
     nrv "Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск» класса Oscar II, несколько эсминцев.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Hangarskip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kursk» Oscar klasse II, flere destroyere."
     nrv "Всего - 50 кораблей и одна субмарина.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Totalt - 50 skip og en ubåt."
     com "Оскар II... Тип вооружения?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Oscar II... Typer av våpen?"
-    nrv "24 противокорабельные ракеты П-700 «Гранит», торпеды.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}24 anti-skip missiler P-700 "Granitt", torpedoer."
+    nrv "24 противокорабельные ракеты П-700 «Гранит», торпеды.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}24 anti-skip missiler P-700 «Granitt», torpedoer."
     com "Покажите на радарах.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Vis det på radarene."
     nrv "Невозможно. Она невидимая, бесшумная.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Umulig. Det er usynlig, stille."
     com "Плохо. Продолжайте наблюдение.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Dårlig. Fortsett å se."
