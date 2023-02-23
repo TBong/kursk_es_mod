@@ -15,14 +15,6 @@ init 1:
         linear 0.2 pos (0, 0)
 
 init -1 python:
-    def menu_num_change():
-        global menu_back_num 
-        if menu_back_num  == 0:
-            menu_back_num = 1
-        elif menu_back_num == 1:
-            menu_back_num = 2
-        else:
-            menu_back_num = 0
 
     def GetRanImg(imgs):
         num = renpy.random.randint(0, len(imgs)-1)

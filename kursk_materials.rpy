@@ -9,6 +9,7 @@ init 2:
     image vmf_pride = gFile("cg/vmf_pride.jpg")
     image rest = gFile("cg/rest.jpg")
     image torpeda1 = gFile("cg/torpeda1.jpg")
+    image torpeda2 = gFile("cg/torpeda2.jpg")
     image kursk1 = gFile("cg/kursk_1.jpg")
     image kursk2 = gFile("cg/kursk_2.jpg")
     image kursk3 = gFile("cg/kursk_3.jpg")
@@ -30,13 +31,21 @@ init 2:
     $ ddt_kolesnikov = gFile("sound/music/ddt_kolesnikov.mp3")
     $ violence = gFile("sound/music/MacQuayle_Violence.mp3")
     $ longing = gFile("sound/music/Santaolalla_Longing.mp3")
+    $ history_sound = gFile("sound/music/history_sound.mp3")
 
     #Звуки
     $ inside_norv = gFile("sound/sfx/inside_norv.mp3")
     $ insideKursk = gFile("sound/sfx/inside_kursk.mp3")
     $ rocketFire = gFile("sound/sfx/rocketfire.mp3")
     $ chayki = gFile("sound/sfx/chayki.mp3")
-    $ fon1 = gFile("sound/sfx/fon1.mp3")
+    $ ra_1 = gFile("sound/sfx/ra_1.mp3")
+    $ ra_2 = gFile("sound/sfx/ra_2.mp3")
+    $ torp_1 = gFile("sound/sfx/torp_1.mp3")
+    $ torp_2 = gFile("sound/sfx/torp_2.mp3")
+    $ clock = gFile("sound/sfx/clock.mp3")
+    $ boom_1 = gFile("sound/sfx/boom_1.mp3")
+    $ boom_2 = gFile("sound/sfx/boom_2.mp3")
+    $ smth_comming = gFile("sound/sfx/smth_comming.mp3")
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
     $ patternFont = gFile("font/18035.otf")
@@ -52,6 +61,7 @@ init 2:
     $ dag = Character (u'Инженер', color = "#285512", what_color = "FFFFFF")
     $ torp = Character (u'Торпедист', color = "#8c8e8f", what_color = "FFFFFF")
     $ radio = Character (u'Динамик', color = "#ff0000", what_color = "FFFFFF")
+    $ p_radio = Character (u'Рация', color = "#ff0000", what_color = "FFFFFF")
     $ com = Character (u'Главнокомандующий', color = "#741111", what_color = "FFFFFF")
     $ nrv = Character (u'Норвежский офицер', color = "#0b1984", what_color = "FFFFFF")
     

@@ -160,8 +160,8 @@ label k_after_sailing:
     scene torpeda1 with dissolve2
     window show
     torp "Что там с ней?"
-    dag "За последние 30 минут температура повысилась на 10 градусов."
-    torp "Ничего страшного."
+    dag "За последние 20 минут температура повысилась на 15 градусов."
+    torp "Это плохо."
     radio "Экипажу приготовиться к пуску ракеты."
     radio "Пуск через: 3, {w=0.5}2, {w=0.5}1."
     window hide
@@ -172,8 +172,8 @@ label k_after_sailing:
     window show
     radio "Пуск успешный."
     torp "Всё, через час распрощаемся с нашим «толстяком»."
-    dag "Пятнадцать лет с торпедами работаю, а как их пускают ни разу не видел."
-    torp "Да в этом ничего интересного и нет."
+    dag "Скорее бы. Перекисно-водородные торпеды высокую температуру не любят."
+    torp "Главное её выпустить, а там с ней будь что будет."
     window hide
     scene kp with Dissolve(5)
     window show
@@ -195,25 +195,98 @@ label norv_base:
     play ambience inside_norv fadein 5
     scene norv1 with Dissolve(5)
     window show
-    com "Русские снова проводят учения в баренцевом море?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Driver Russerne øvelser i Barentshavet igjen?"
-    nrv "Да, сэр.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Ja, sir."
-    com "В каком составе на этот раз?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}I hvilken sammensetning denne gangen?"
-    nrv "Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск» класса Oscar II, несколько эсминцев.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Hangarskip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kursk» Oscar klasse II, flere destroyere."
-    nrv "Всего - 50 кораблей и одна субмарина.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Totalt - 50 skip og en ubåt."
-    com "Оскар II... Тип вооружения?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Oscar II... Typer av våpen?"
-    nrv "24 противокорабельные ракеты П-700 «Гранит», торпеды.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}24 anti-skip missiler P-700 «Granitt», torpedoer."
-    com "Покажите на радарах.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Vis det på radarene."
-    nrv "Невозможно. Она невидимая, бесшумная.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Umulig. Det er usynlig, stille."
-    com "Плохо. Продолжайте наблюдение.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Dårlig. Fortsett å se."
+    com "Driver Russerne øvelser i Barentshavet igjen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Русские снова проводят учения в баренцевом море?"
+    nrv "Ja, sir.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Да, сэр."
+    com "I hvilken sammensetning denne gangen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}В каком составе на этот раз?"
+    nrv "Hangarskip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kursk» Oscar klasse II, flere destroyere.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск» класса Oscar II, несколько эсминцев."
+    nrv "Totalt - 50 skip og en ubåt.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Всего - 50 кораблей и одна субмарина."
+    com "Oscar II... Typer av våpen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Оскар II... Тип вооружения?"
+    nrv "24 anti-skip missiler P-700 «Granitt», torpedoer.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}24 противокорабельные ракеты П-700 «Гранит», торпеды."
+    com "Vis det på radarene.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Покажите на радарах."
+    nrv "Umulig. Det er usynlig, stille.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Невозможно. Она невидимая, бесшумная."
+    com "Dårlig. Fortsett å se.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Плохо. Продолжайте наблюдение."
     window hide
     stop ambience fadeout 5
-    play ambience insideKursk fadein 5
     scene black with Dissolve(5)
+    jump torp_boom
+
+label torp_boom:
+    $ new_chapter(5, u"Курск: Взрыв торпеды")
+    $ updVisual()
+    play ambience insideKursk fadein 5
     scene kp with Dissolve(5)
     window show
     sk "Корабельная группа докладывает на берег и в скором времени будет готова продолжить."
-    su "Значит через пол часа переходим ко второму этапу учений."
-    su "В первом отсеке пусть загружают учебную торпеду в аппарат."
+    su "Через пол часа переходим ко второму этапу учений."
+    su "Первому отсеку начать загрузку торпеды."
     sk "Так точно!"
     window hide
+    scene torpeda1 with dissolve2
+    play sound ra_1
+    window show
+    p_radio "Первый отсек, состояние учебной торпеды?"
+    play sound ra_1
+    torp "Торпеда «65-76» в норме, но внутреннее давление и температура повышены."
+    play sound ra_1
+    p_radio "В пределах допустимого?"
+    play sound ra_1
+    torp "Так точно."
+    play sound ra_1
+    p_radio "Принято. Начинайте погрузку."
+    play sound ra_1
+    torp "Слушаюсь."
+    window hide
+    scene torpeda2 with dissolve2
+    window show
+    dag "Торпедный аппарат готов."
+    torp "Загружай."
+    stop ambience fadeout 5
+    window hide
+    play sound torp_2
+    camera:
+        perspective True
+        zpos 0
+        linear 10.3 ypos -70 xpos 20 zpos -500
+    pause (10.3)
+    play sound_1 clock volume 0.3 fadein 8
+    play sound_2 smth_comming volume 0.5
+    camera:
+        perspective True
+        xpos 0 zpos 0 ypos 0
+    scene torpeda1 with dissolve
+    pause (1)
+    window show
+    dag "Торпеда в аппарате."
+    window hide
+    pause (0.65)
+    window show
+    torp "Сколько время? У меня нет часов."
+    window hide
+    pause (0.65)
+    window show
+    dag "11:28"
+    window hide
+    pause (0.65)
+    window show
+    torp "Cкорее бы от неё избавиться."
+    window hide
+    pause (2.5)
+    play sound_2 boom_2
+    stop sound_1 fadeout 1
+    stop ambience fadeout 1
+    scene fire_torpeda1 with dissolve
+    pause (0.75)
+    play sound_1 boom_1 volume 0.5     
+    pause (0.75)
+    scene fire_torpeda2 with dissolve
+    pause (1)
+    stop sound_1 fadeout 3
+    scene fire_torpeda3 with dspr
+    scene black with Dissolve(3)
+    window show
+
+
+
+
+
     
