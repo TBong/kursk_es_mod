@@ -5,7 +5,7 @@ init 1:
 
     define gui.text_color = "#ffffff"
     define gui.interface_text_color = "#ffffff"
-    define config.mouse['default'] = [ ( gFile("gui/newCursor.png"), 0, 0) ]
+    #define config.mouse['default'] = [ ( gFile("gui/newCursor.png"), 0, 0) ]
 
     transform k_shaking:
         anchor (0.0, 0.0) pos (0.0, 0.0)
@@ -99,16 +99,3 @@ init python:
     renpy.music.register_channel("sound_2",loop=False)
     renpy.music.register_channel("sound_3",loop=False)
 
-label k_main:
-    $ updVisual()
-    call k_menu
-    return
-
-label k_menu:
-    $ updVisual()
-    $ new_chapter(0, u"Меню")
-    scene kursk2 with dissolve
-    play music longing
-    show DustB
-    call screen k_main_menu with dissolve
-    return

@@ -1,9 +1,13 @@
+label k_main:
+    $ updVisual()
+    call k_menu
+    return
+
 label k_prolog:
     stop music fadeout 3
     scene black with dissolve2
     $ new_chapter(0, u"Курск: Предыстория")
     $ updVisual()
-    #play music 
     play music history_sound fadein 3
     scene kursk3 with Dissolve(5)
     pause (1)

@@ -1,4 +1,13 @@
 #Главное меню
+label k_menu:
+    $ updVisual()
+    $ new_chapter(0, u"Меню")
+    scene kursk2 with dissolve
+    play music longing
+    show DustB
+    call screen k_main_menu with dissolve
+    return
+
 screen k_main_menu:
     tag menu
     modal True
