@@ -215,7 +215,7 @@ label norv_base:
     jump torp_boom
 
 label torp_boom:
-    $ new_chapter(5, u"Курск: Взрыв торпеды")
+    $ new_chapter(5, u"Курск: Загрузка торпеды, 11:25")
     $ updVisual()
     play ambience insideKursk fadein 5
     scene kp with Dissolve(5)
@@ -274,21 +274,37 @@ label torp_boom:
     window show
     torp "Cкорее бы от неё избавиться."
     window hide
-    pause (2.5)
+    pause (2.0)
     play sound_2 boom_2
-    stop sound_1 fadeout 1
+    stop sound_1
     stop ambience fadeout 1
-    scene fire_torpeda1 with dissolve
+    scene black
+    show fire_torpeda1
+    with dissolve
+    play sound_1 boom_1 volume 0.5   
+    pause (0.75)  
     pause (0.75)
-    play sound_1 boom_1 volume 0.5     
-    pause (0.75)
-    scene fire_torpeda2 with dissolve
+    scene black
+    show fire_torpeda2 
+    with dspr
     pause (1)
     stop sound_1 fadeout 3
-    scene fire_torpeda3 with dspr
-    scene black with Dissolve(3)
-    window show
+    scene black
+    show fire_torpeda3 
+    with dspr
+    stop sound_1 fadeout 2
+    stop sound_2 fadeout 2
+    scene black with dissolve2
+    jump k_first_explosion_video
 
+label k_first_explosion_video:
+    $ renpy.movie_cutscene(gFile("video/first_explosion.webm"))
+    jump aft_first_explosion
+
+label aft_first_explosion:
+    $ new_chapter(6, u"Курск: Взрыв торпеды")
+    $ updVisual()
+    "а"
 
 
 

@@ -14,6 +14,14 @@ init 1:
         linear 0.2 pos (5, -5)
         linear 0.2 pos (0, 0)
 
+    transform k_shaking_repeat:
+        anchor (0.0, 0.0) pos (0.0, 0.0)
+        linear 0.1 pos (-15, -15)
+        linear 0.1 pos (0, 0)
+        linear 0.1 pos (15, -15)
+        linear 0.1 pos (0, 0)
+        repeat
+
 init -1 python:
 
     def GetRanImg(imgs):

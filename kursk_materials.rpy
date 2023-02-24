@@ -46,6 +46,7 @@ init 2:
     $ boom_1 = gFile("sound/sfx/boom_1.mp3")
     $ boom_2 = gFile("sound/sfx/boom_2.mp3")
     $ smth_comming = gFile("sound/sfx/smth_comming.mp3")
+    
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
     $ patternFont = gFile("font/18035.otf")
