@@ -4,7 +4,7 @@ label k_prolog:
     $ new_chapter(0, u"Курск: Предыстория")
     $ updVisual()
     #play music 
-    play music fon1 fadein 3
+    play music history_sound fadein 3
     scene kursk3 with Dissolve(5)
     pause (1)
     $ set_mode_nvl()
