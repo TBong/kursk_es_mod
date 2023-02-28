@@ -16,10 +16,10 @@ init 1:
 
     transform k_shaking_repeat:
         anchor (0.0, 0.0) pos (0.0, 0.0)
-        linear 0.1 pos (-15, -15)
-        linear 0.1 pos (0, 0)
-        linear 0.1 pos (15, -15)
-        linear 0.1 pos (0, 0)
+        linear 0.3 pos (-5, -5)
+        linear 0.3 pos (0, 0)
+        linear 0.3 pos (5, -5)
+        linear 0.3 pos (0, 0)
         repeat
 
 init -1 python:
@@ -106,4 +106,5 @@ init python:
     renpy.music.register_channel("sound_1",loop=False)
     renpy.music.register_channel("sound_2",loop=False)
     renpy.music.register_channel("sound_3",loop=False)
+    renpy.music.register_channel("sound_special_loop",loop=True)
 

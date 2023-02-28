@@ -5,6 +5,7 @@ init 2:
     image vmf = gFile("cg/vmf.jpg")
     image kp = gFile("cg/kp.jpg")
     image kp2 = gFile("cg/kp2.jpg")
+    image kp_fire = gFile("cg/kp_fire.jpg")
     image k141_parade = gFile("cg/k141_parade.jpg")
     image vmf_pride = gFile("cg/vmf_pride.jpg")
     image rest = gFile("cg/rest.jpg")
@@ -23,6 +24,10 @@ init 2:
     image fire_torpeda3 = gFile("cg/fire_torpeda3.jpg")
     image norv1 = gFile("cg/norv1.jpg")
     image norv2 = gFile("cg/norv2.jpg")
+    image turb1 = gFile("cg/turb1.jpg")
+    image turb2 = gFile("cg/turb2.jpg")
+    image turb3 = gFile("cg/turb3.jpg")
+    image turb4 = gFile("cg/turb4.jpg")
 
     #Музыка
     $ entsan = gFile("sound/music/EnterSandman.mp3")
@@ -39,13 +44,13 @@ init 2:
     $ rocketFire = gFile("sound/sfx/rocketfire.mp3")
     $ chayki = gFile("sound/sfx/chayki.mp3")
     $ ra_1 = gFile("sound/sfx/ra_1.mp3")
-    $ ra_2 = gFile("sound/sfx/ra_2.mp3")
     $ torp_1 = gFile("sound/sfx/torp_1.mp3")
     $ torp_2 = gFile("sound/sfx/torp_2.mp3")
     $ clock = gFile("sound/sfx/clock.mp3")
     $ boom_1 = gFile("sound/sfx/boom_1.mp3")
     $ boom_2 = gFile("sound/sfx/boom_2.mp3")
     $ smth_comming = gFile("sound/sfx/smth_comming.mp3")
+    $ fire = gFile("sound/sfx/fire.mp3")
     
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
@@ -54,6 +59,7 @@ init 2:
     #Персонажи
     $ hor = Character (u'Моряки', color = "#1f5790", what_color = "FFFFFF")
     $ bk = Character (u'Быков', color = "#4ea0f1", what_color = "FFFFFF")
+    $ gb = Character (u'Губарев', color = "#043f7a", what_color = "FFFFFF")
     $ sk = Character (u'Симонов', color = "#42688f", what_color = "FFFFFF")
     $ su = Character (u'Капитан', color = "#0721eb", what_color = "FFFFFF")
     $ mo = Character (u'Мотин', color = "#6873c7", what_color = "FFFFFF")

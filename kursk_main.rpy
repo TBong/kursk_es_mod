@@ -304,7 +304,89 @@ label k_first_explosion_video:
 label aft_first_explosion:
     $ new_chapter(6, u"Курск: Взрыв торпеды")
     $ updVisual()
+    play ambience insideKursk fadein 2
+    scene black
+    show turb3
+    with dissolve
+    window show
+    sk "Что это было?!"
+    bk "Что случилось?!"
+    gb "Почему мы так резко набрали глубину?!"
+    window hide
+    scene turb2 with dissolve2
+    window show
+    "Опомнившийся командир отсека начал действовать согласно установленным правилам поведения экипажа при не штатных ситуациях."
+    mo "Герметезировать отсек! Все клапаны закрыть!"
+    mo "Задраить носовую переборку! Задраить все люки!"
+    mo "Наладить связь с центральным отсеком!"
+    window hide
+    scene turb1 with dissolve2
+    window show
+    play sound ra_1
+    mo "Центральный, центральный, ответьте седьмому, приём!"
+    play sound ra_1
+    mo "Повторяю, ответьте седьмому, приём!"
+    bk "Почему центральный не отвечает?"
+    sk "Потому что они мертвы!"
+    mo "Тихо."
+    bk "Почему мы не всплываем?"
+    gb "А ты как думаешь?!"
+    mo "Тихо я сказал!"
+    window hide
+    scene black with Dissolve(3)
+    stop ambience fadeout 1
+    play sound_loop fire fadein 1
+    scene kp_fire with Dissolve(3)
+    window show
+    radio "Центральный, ответьте седьмому, приём!"
+    window hide
+    pause (1)
+    window show
+    radio "Центральный, ответьте, приём!"
+    window hide
+    play ambience insideKursk fadein 2
+    stop sound_loop fadeout 2
+    scene turb4 with Dissolve(3)
+    window show
+    gb "Товарищ командир, в первом и отсекe пожар!"
+    mo "Температура детонации?"
+    sk "Торпеды на стелажах взорвутся при температуре 250 градусов."
+    bk "Сколько сейчас?"
+    gb "270."
+    gb "С каждой секундой растёт!"
+    window hide
+    scene turb1 with dissolve2
+    window show
+    bk "Что нам делать?"
+    mo "Всё как нас учили."
+    mo "Герметизируем отсек, задраиваем переборку."
+    mo "В случае задымления расчехляем ПДА!{color=#a5a5a5}{vspace=10}{space=100}ПДА{space=10}-{space=10}Портативный дыхательный аппарат"
+    gb "Температура зашкалила!"
+    mo "Без паники..."
+    window hide
+    pause (3)
+    scene black with Dissolve(4)
+    jump k_second_explosion_video
+
+label k_second_explosion_video:
+    $ renpy.movie_cutscene(gFile("video/second_explosion.webm"))
+    jump aft_second_explosion
+
+label aft_second_explosion:
+    $ new_chapter(7, u"Курск: Взрыв боезапаса")
+    $ updVisual()
     "а"
+
+
+
+    
+    
+
+
+
+
+
+    
 
 
 
