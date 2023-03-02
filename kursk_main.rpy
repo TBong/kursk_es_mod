@@ -40,7 +40,7 @@ label k_9aug_video:
     jump k_before
 
 label k_before:
-    $ new_chapter(1, u"Курск: Подготовка лодки и экипажа к учениям. Североморск, 9 августа")
+    $ new_chapter(1, u"Курск: Подготовка лодки")
     $ updVisual()
     play music chayki fadein 2
     scene kursk5 with Dissolve(5)
@@ -51,11 +51,11 @@ label k_before:
     scene kp with dissolve2
     play ambience insideKursk fadein 2 volume 0.3
     window show
-    "Радисты сверяют маршруты, устанавливают связь с отсеками и другими кораблями."
+    "Радисты устанавливают связь с отсеками и другими кораблями."
     "Помимо 111-ти человек штатного экипажа, во время проведения операции на подлодке будут находиться ещё 7 других специалистов: 5 офицеров штаба дивизии, военпред и инженер с завода «Дагдизель»."
     "Для них выделяются отдельные каюты в жилом отсеке №4."
     "На лодку они должны попасть непосредственно перед отплытием."
-    "Вечером, командир, проверив выполненную работу и заполнив чек-лист, отдаёт экипажу команду отдыхать и набираться сил перед грядущим выходом в море."
+    "Вечером, командир, проверив выполненную работу и заполнив чек-лист, отдаёт экипажу команду отдыхать перед грядущим выходом в море."
     "Ночь с 9-го на 10-ое число моряки проводят непосредственно на подлодке."
     window hide
     scene black with Dissolve(3)
@@ -104,7 +104,7 @@ label k_10aug_6_video:
     jump k_sailing
 
 label k_sailing:
-    $ new_chapter(2, u"Курск: День отплытия. Североморск, 10 августа, 6:00")
+    $ new_chapter(2, u"Курск: День отплытия")
     $ updVisual()
     scene black
     play ambience insideKursk fadein 5 volume 0.3
@@ -138,7 +138,7 @@ label k_sailing_video:
     jump k_after_sailing
 
 label k_after_sailing:
-    $ new_chapter(3, u"Курск: Отплытие. Североморск, 10 августа, 7:00")
+    $ new_chapter(3, u"Курск: Учения")
     $ updVisual()
     play ambience ambience_lake_shore_day fadein 5
     scene captains with Dissolve(5)
@@ -146,7 +146,7 @@ label k_after_sailing:
     s_adm "А ведь эта лодка создавалась под предлогом незаметности. Ни один радар не сможет её засечь, если те, кто находится на ней, этого захотят."
     s_adm "Удивительно, не правда ли?"
     adm "В этом плане «Тайфун» куда лучше. Он сам тебя найдет."
-    adm "Лишь одни эти лодки вселяют страх на все штаты."
+    adm "Одни лишь эти подлодки вселяют страх на все соединённые штаты."
     s_adm "Неудивительно, почему американцы готовы платить нам, только бы мы их утилизировали."
     window hide
     stop ambience fadeout 5
@@ -194,7 +194,7 @@ label k_norv_base_video:
     jump norv_base
 
 label norv_base:
-    $ new_chapter(4, u"Курск: Норвегия, «Оласверн»")
+    $ new_chapter(4, u"Курск: «Оласверн»")
     $ updVisual()
     play ambience inside_norv fadein 5
     scene norv1 with Dissolve(5)
@@ -215,7 +215,7 @@ label norv_base:
     jump torp_boom
 
 label torp_boom:
-    $ new_chapter(5, u"Курск: Загрузка торпеды, 11:25")
+    $ new_chapter(5, u"Курск: Загрузка торпеды")
     $ updVisual()
     play ambience insideKursk fadein 5
     scene kp with Dissolve(5)
