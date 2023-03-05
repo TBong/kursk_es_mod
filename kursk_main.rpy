@@ -222,7 +222,7 @@ label torp_boom:
     window show
     sk "Корабельная группа докладывает на берег и в скором времени будет готова продолжить."
     su "Через пол часа переходим ко второму этапу учений."
-    su "Первому отсеку начать загрузку торпеды."
+    su "Первому отсеку начать загрузку торпеды. Открыть вентиляцию между отсеками."
     sk "Так точно!"
     window hide
     scene torpeda1 with dissolve2
@@ -328,7 +328,7 @@ label aft_first_explosion:
     mo "Повторяю, ответьте седьмому, приём!"
     bk "Почему центральный не отвечает?"
     sk "Потому что они мертвы!"
-    mo "Тихо."
+    mo "Тихо!"
     bk "Почему мы не всплываем?"
     gb "А ты как думаешь?!"
     mo "Тихо я сказал!"
@@ -348,12 +348,12 @@ label aft_first_explosion:
     stop sound_loop fadeout 2
     scene turb4 with Dissolve(3)
     window show
-    gb "Товарищ командир, в первом и отсекe пожар!"
-    mo "Температура детонации?"
+    gb "Товарищ командир, в первом отсекe пожар!"
+    mo "Найди документацию и прочитай какая температура детонации."
     sk "Торпеды на стелажах взорвутся при температуре 250 градусов."
     bk "Сколько сейчас?"
     gb "270."
-    gb "С каждой секундой растёт!"
+    gb "Черт... С каждой секундой растёт!"
     window hide
     scene turb1 with dissolve2
     window show
@@ -365,7 +365,7 @@ label aft_first_explosion:
     mo "Без паники..."
     window hide
     pause (3)
-    scene black with Dissolve(4)
+    scene black with Dissolve(2)
     jump k_second_explosion_video
 
 label k_second_explosion_video:
@@ -376,19 +376,3 @@ label aft_second_explosion:
     $ new_chapter(7, u"Курск: Взрыв боезапаса")
     $ updVisual()
     "а"
-
-
-
-    
-    
-
-
-
-
-
-    
-
-
-
-
-    
