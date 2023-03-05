@@ -6,6 +6,7 @@ init 1:
     define gui.text_color = "#ffffff"
     define gui.interface_text_color = "#ffffff"
     #define config.mouse['default'] = [ ( gFile("gui/newCursor.png"), 0, 0) ]
+    $ saveOldVisual()
 
     transform k_shaking:
         anchor (0.0, 0.0) pos (0.0, 0.0)
@@ -35,19 +36,16 @@ init -1 python:
         renpy.display.screen.screens[("k_say_gui_old",None)] = renpy.display.screen.screens[("say",None)]
         renpy.display.screen.screens[("k_game_menu_selector_old",None)] = renpy.display.screen.screens[("game_menu_selector",None)]
         renpy.display.screen.screens[("k_nvl_old",None)] = renpy.display.screen.screens[("nvl",None)]
-        #renpy.display.screen.screens[("dpa_choice_old",None)] = renpy.display.screen.screens[("choice",None)]
 
     def updVisual():
         renpy.display.screen.screens[("say",None)] = renpy.display.screen.screens[("k_say_gui_reborn",None)]
         renpy.display.screen.screens[("game_menu_selector",None)] = renpy.display.screen.screens[("k_menu_selector",None)]
         renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("k_nvl",None)]
-        #renpy.display.screen.screens[("choice",None)] = renpy.display.screen.screens[("dpa_choice",None)]
     
     def rollbackVisual(*arg):
-        renpy.display.screen.screens[("k_say_gui_reborn",None)] = renpy.display.screen.screens[("say",None)]
-        renpy.display.screen.screens[("k_game_menu_selector_old",None)] = renpy.display.screen.screens[("game_menu_selector",None)]
-        renpy.display.screen.screens[("k_nvl_old",None)] = renpy.display.screen.screens[("nvl",None)]
-        #renpy.display.screen.screens[("choice",None)] = renpy.display.screen.screens[("dpa_choice_old",None)]
+        renpy.display.screen.screens[("say",None)] = renpy.display.screen.screens[("k_say_gui_old",None)]
+        renpy.display.screen.screens[("game_menu_selector",None)] = renpy.display.screen.screens[("k_game_menu_selector_old",None)]
+        renpy.display.screen.screens[("nvl",None)] = renpy.display.screen.screens[("k_nvl_old",None)]
     
     def dpaNewChapter(dayNum, chapterName):
         dpaSetChapter(dayNum, chapterName)
