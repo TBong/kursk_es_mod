@@ -208,12 +208,12 @@ label aft_rocket_fire:
     radio "Пуск успешный."
     torp "Всё, через час распрощаемся с нашим «толстяком»."
     dag "Скорее бы. Перекисно-водородные торпеды высокую температуру не любят."
-    torp "Главное её выпустить, а там с ней будь что будет."
+    torp "Главное её выпустить, а там будь что будет."
     window hide
     scene kp with Dissolve(5)
     window show
     su "C Петра Великого докладывают, об успешном поражении цели, молодцы!"
-    su "Погружение до 40 метров, дифферент на нос 5, взять курс на 130 градусов, установить скорость 25 узлов."
+    su "Погружение до 40 метров с дифферентом на нос 5, взять курс на 130 градусов, установить скорость 25 узлов."
     st "Есть погружение 40 дифферент 5, курс 130, скорость 25!"
     window hide
     stop ambience fadeout 5
@@ -261,19 +261,19 @@ label torp_attention:
     play sound ra_1
     su "Первый, это центральный, говорит капитан, что у вас?"
     play sound ra_1
-    p_radio "Проблемы с «65-76ПВ». Показатели шалят."
+    p_radio "Проблемы с «65-76ПВ», показатели скакнули."
     play sound ra_1
-    su "Доложите о состоянии учебной торпеды."
+    su "Состояние торпеды?"
     play sound ra_1
     p_radio "Торпеда в норме, но давление и температура повышены. Запрашиваю разрешение на аварийный сброс в целях безопасности."
     play sound ra_1
-    su "Внутренние показатели повышены в пределах допустимого?"
+    su "Внутренние показатели в пределах допустимого?"
     play sound ra_1
     p_radio "Так точно."
     play sound ra_1
-    su "Аварийный сброс запрещаю. Через 5 минут начинайте погрузку в аппарат."
+    su "Аварийный сброс запрещаю. Через пять минуты начинайте погрузку в аппарат."
     play sound ra_1
-    p_radio "Принято."
+    p_radio "Слушаюсь."
     window hide 
     stop ambience fadeout 2
     jump torp_boom
@@ -282,57 +282,58 @@ label torp_boom:
     $ updVisual
     $ new_chapter(8, u"Курск: Погрузка торпеды")
     play ambience insideKursk fadein 2
-    scene torpeda2 with dissolve2
+    scene torpeda1 with dissolve2
     window show
-
-
-    #диалог перед погрузкой
-
-
-
-    dag "Торпедный аппарат готов."
-    torp "Загружай."
-    stop ambience fadeout 5
+    dag "Что капитан сказал?"
+    torp "Говорит, что пока показатели в норме - продолжаем работать."
+    dag "Не с проста она злится."
+    dag "Я с такими торпедами работал мало, но на заводе слышал, что их слабое место - резервуары с перекисью водорода."
+    torp "Думаешь протечка?"
+    dag "Не знаю."
+    dag "Это можно понять только заглянув внутрь."
+    torp "И зачем их вообще на вооружение поставили? Дешёвые и опасные."
+    dag "Время 11:28, пора загружать."
     window hide
+    scene torpeda2 with dissolve2
+    torp "Торпедный аппарат готов. Начинаем."
+    stop ambience fadeout 5
     play sound torp_2
     camera:
         perspective True
         zpos 0
         linear 10.3 ypos -70 xpos 20 zpos -500
     pause (10.3)
-    play sound_1 clock volume 0.3 fadein 8
-    play sound_2 smth_comming volume 0.5
     camera:
         perspective True
         xpos 0 zpos 0 ypos 0
     scene torpeda1 with dissolve
+    play sound_1 clock volume 0.3 fadein 8
+    play sound_2 smth_comming volume 0.3
     pause (1)
     window show
-    dag "Торпеда в аппарате."
+    torp "Торпеда в аппарате."
+    dag "Надо пополнить резервуар с воздухом."
+    torp "Сейчас шланг КСПВ подключу.{color=#a5a5a5}{vspace=10}{space=100}КСПВ{space=10}-{space=10}корабельная система подачи воздуха"
     window hide
-    pause (0.65)
+    pause (1)
     window show
-    torp "Сколько время? У меня нет часов."
+    torp "С богом!"
+    play sound press_button
     window hide
-    pause (0.65)
-    window show
-    dag "11:28"
-    window hide
-    pause (0.65)
-    window show
-    torp "Cкорее бы от неё избавиться."
-    window hide
-    pause (2.0)
+    pause (0.1)
+    play sound vacum
+    pause (3.0)
     play sound_2 boom_2
+    stop sound
     stop sound_1
     stop ambience fadeout 1
     scene black
     show fire_torpeda1
     with dissolve
     play sound_1 boom_1 volume 0.5   
-    pause (0.75)  
+    pause (1)  
     scene black
-    show fire_torpeda2 
+    show fire_torpeda4 
     with dspr
     pause (1)
     stop sound_1 fadeout 3
@@ -362,12 +363,14 @@ label aft_first_explosion:
     window hide
     scene turb2 with dissolve2
     window show
-    "Опомнившийся командир отсека начал действовать согласно установленным правилам поведения экипажа при не штатных ситуациях."
-    mo "{cps=70}{b}Герметезировать отсек! Все клапаны закрыть!"
-    mo "{cps=70}{b}Задраить носовую переборку! Задраить все люки!"
+    "Опомнившийся командир отсека начал действовать согласно установленным правилам."
+    mo "{cps=70}{size=+2}Герметезировать отсек!"
+    mo "{cps=70}{size=+2}Задраить носовую переборку! Задраить все люки!"
     window hide
     scene turb1 with dissolve2
     window show
+    "У моряков-подводников есть определённый набор правил поведения экипажа при не штатных ситуациях."
+    "Следующим после герметизации в нём идёт установление связи."
     play sound ra_1
     mo "Центральный, центральный, ответьте седьмому, приём!"
     play sound ra_1
@@ -377,7 +380,7 @@ label aft_first_explosion:
     mo "Тихо!"
     bk "Почему мы не всплываем?"
     gb "А ты как думаешь?!"
-    mo "{cps=70}{b}Тихо я сказал!"
+    mo "{cps=70}{size=+2}Тихо я сказал!"
     window hide
     scene black with Dissolve(3)
     stop ambience fadeout 1
@@ -396,7 +399,7 @@ label aft_first_explosion:
     window show
     gb "Товарищ командир, в первом отсекe пожар!"
     mo "Найди документацию, какая температура детонации?"
-    sk "Торпеды на стелажах взорвутся при температуре 250 градусов."
+    sk "Торпеды на стелажах взорвутся при 250 градусов."
     mo "Сколько сейчас?"
     gb "270."
     gb "Черт... С каждой секундой растёт!"
@@ -407,7 +410,7 @@ label aft_first_explosion:
     mo "Без паники!"
     mo "Всё как нас учили."
     mo "Герметизируем отсек, задраиваем переборку."
-    mo "В случае задымления расчехляем ПДА.{color=#a5a5a5}{vspace=10}{space=100}ПДА{space=10}-{space=10}Портативный дыхательный аппарат"
+    mo "В случае задымления расчехляем ПДА, покидаем отсек.{color=#a5a5a5}{vspace=10}{space=100}ПДА{space=10}-{space=10}Портативный дыхательный аппарат"
     gb "Температура зашкалила!"
     window hide
     pause (3)

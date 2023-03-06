@@ -22,6 +22,7 @@ init 2:
     image fire_torpeda1 = gFile("cg/fire_torpeda1.jpg")
     image fire_torpeda2 = gFile("cg/fire_torpeda2.jpg")
     image fire_torpeda3 = gFile("cg/fire_torpeda3.jpg")
+    image fire_torpeda4 = gFile("cg/fire_torpeda4.jpg")
     image norv1 = gFile("cg/norv1.jpg")
     image norv2 = gFile("cg/norv2.jpg")
     image turb1 = gFile("cg/turb1.jpg")
@@ -52,6 +53,8 @@ init 2:
     $ smth_comming = gFile("sound/sfx/smth_comming.mp3")
     $ fire = gFile("sound/sfx/fire.mp3")
     $ kp_ambience = gFile("sound/sfx/Bunker_Special1.ogg")
+    $ press_button = gFile("sound/sfx/BigButton.ogg")
+    $ vacum = gFile("sound/sfx/vacum.mp3")
     
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
