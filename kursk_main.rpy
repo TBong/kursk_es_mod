@@ -9,7 +9,7 @@ label k_prolog:
     $ new_chapter(0, u"Курск: Предыстория")
     $ updVisual()
     play music history_sound fadein 3
-    scene kurst3 with Dissolve(5)
+    scene kursk3 with Dissolve(5)
     pause (1)
     $ set_mode_nvl()
     "{font=[patternFont]}{color=#900}К-141 «Курск»{/font}{/color} – Российский атомный подводный ракетоносный крейсер проекта 949А «Антей». Заложен на «Севмаше» в 1990 году, спущен на воду в мае, принят в эксплуатацию в декабре 1994 года."
@@ -26,7 +26,7 @@ label k_prolog:
     pause (1)
     "Экипаж АПРК был сформирован на Северном флоте в июне 1991 года, бóльшая его часть — специалисты 1-го и 2-го классов. Лодка под командованием капитана 1-го ранга готовилась к новому дальнему походу в составе мощной корабельной группы."
     "На 15 октября 2000 года из Североморска планировался выход в Средиземное море авианосно-маневренной группы Северного флота, включавшей «Курск»."
-    scene kurst4 with dissolve2
+    scene kursk4 with dissolve2
     pause (1)
     "До этого, 10 августа 2000 года, согласно плану учений Северного флота, «Курск» должен был выйти море для выполнения учебно-боевого задания недалеко от Кольского залива."
     "С этого и началась трагическая история крупнейшей катастрофы в послевоенной истории советского и российского подводного флота."
@@ -43,7 +43,7 @@ label k_before:
     $ new_chapter(1, u"Курск: Подготовка лодки")
     $ updVisual()
     play music chayki fadein 2
-    scene kurst5 with Dissolve(5)
+    scene kursk5 with Dissolve(5)
     "9 августа, за день до назначенной даты, в порту идёт подготовка АПЛ к учениям."
     "Моряки-подводники приняли лодку, провели осмотр всех отсеков."
     window hide
@@ -164,7 +164,7 @@ label k_after_sailing:
     s_adm "Неудивительно, почему американцы готовы платить нам, только бы мы их утилизировали."
     window hide
     stop ambience fadeout 5
-    play ambience insideKurst fadein 5
+    play ambience insideKursk fadein 5
     scene black with Dissolve(5)
     scene kp with Dissolve(5)
     window show
@@ -202,7 +202,7 @@ label k_rocket_fire_video:
 label aft_rocket_fire:
     $ new_chapter(5, u"Курск: Стрельба ракетой")
     $ updVisual()
-    play ambience insideKurst fadein 4
+    play ambience insideKursk fadein 4
     scene torpeda1 with Dissolve(4)
     window show
     radio "Пуск успешный."
@@ -233,7 +233,7 @@ label norv_base:
     com "Driver Russerne øvelser i Barentshavet igjen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Русские снова проводят учения в баренцевом море?"
     nrv "Ja, sir.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Да, сэр."
     com "I hvilken sammensetning denne gangen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}В каком составе на этот раз?"
-    nrv "Hangarstip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kurst» Oscar klasse II, flere destroyere.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск» класса Oscar II, несколько эсминцев."
+    nrv "Hangarstip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kursk» Oscar klasse II, flere destroyere.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск» класса Oscar II, несколько эсминцев."
     nrv "Totalt - 50 stip og en ubåt.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Всего - 50 кораблей и одна субмарина."
     com "Oscar II... Typer av våpen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Оскар II... Тип вооружения?"
     nrv "24 anti-stip missiler P-700 «Granitt», torpedoer.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}24 противокорабельные ракеты П-700 «Гранит», торпеды."
@@ -273,7 +273,7 @@ label torp_attention:
     play sound ra_1
     su "Аварийный сброс запрещаю. Через 5 минут начинайте погрузку в аппарат."
     play sound ra_1
-    p_radio "Слушаюсь."
+    p_radio "Принято."
     window hide 
     stop ambience fadeout 2
     jump torp_boom
@@ -363,9 +363,8 @@ label aft_first_explosion:
     scene turb2 with dissolve2
     window show
     "Опомнившийся командир отсека начал действовать согласно установленным правилам поведения экипажа при не штатных ситуациях."
-    mo "Герметезировать отсек! Все клапаны закрыть!"
-    mo "Задраить носовую переборку! Задраить все люки!"
-    mo "Наладить связь с центральным отсеком!"
+    mo "{cps=70}{b}Герметезировать отсек! Все клапаны закрыть!"
+    mo "{cps=70}{b}Задраить носовую переборку! Задраить все люки!"
     window hide
     scene turb1 with dissolve2
     window show
@@ -378,7 +377,7 @@ label aft_first_explosion:
     mo "Тихо!"
     bk "Почему мы не всплываем?"
     gb "А ты как думаешь?!"
-    mo "Тихо я сказал!"
+    mo "{cps=70}{b}Тихо я сказал!"
     window hide
     scene black with Dissolve(3)
     stop ambience fadeout 1
@@ -398,7 +397,7 @@ label aft_first_explosion:
     gb "Товарищ командир, в первом отсекe пожар!"
     mo "Найди документацию, какая температура детонации?"
     sk "Торпеды на стелажах взорвутся при температуре 250 градусов."
-    bk "Сколько сейчас?"
+    mo "Сколько сейчас?"
     gb "270."
     gb "Черт... С каждой секундой растёт!"
     window hide
