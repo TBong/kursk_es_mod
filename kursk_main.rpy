@@ -9,7 +9,7 @@ label k_prolog:
     $ new_chapter(0, u"Курск: Предыстория")
     $ updVisual()
     play music history_sound fadein 3
-    scene kursk3 with Dissolve(5)
+    scene kurst3 with Dissolve(5)
     pause (1)
     $ set_mode_nvl()
     "{font=[patternFont]}{color=#900}К-141 «Курск»{/font}{/color} – Российский атомный подводный ракетоносный крейсер проекта 949А «Антей». Заложен на «Севмаше» в 1990 году, спущен на воду в мае, принят в эксплуатацию в декабре 1994 года."
@@ -26,7 +26,7 @@ label k_prolog:
     pause (1)
     "Экипаж АПРК был сформирован на Северном флоте в июне 1991 года, бóльшая его часть — специалисты 1-го и 2-го классов. Лодка под командованием капитана 1-го ранга готовилась к новому дальнему походу в составе мощной корабельной группы."
     "На 15 октября 2000 года из Североморска планировался выход в Средиземное море авианосно-маневренной группы Северного флота, включавшей «Курск»."
-    scene kursk4 with dissolve2
+    scene kurst4 with dissolve2
     pause (1)
     "До этого, 10 августа 2000 года, согласно плану учений Северного флота, «Курск» должен был выйти море для выполнения учебно-боевого задания недалеко от Кольского залива."
     "С этого и началась трагическая история крупнейшей катастрофы в послевоенной истории советского и российского подводного флота."
@@ -43,13 +43,13 @@ label k_before:
     $ new_chapter(1, u"Курск: Подготовка лодки")
     $ updVisual()
     play music chayki fadein 2
-    scene kursk5 with Dissolve(5)
+    scene kurst5 with Dissolve(5)
     "9 августа, за день до назначенной даты, в порту идёт подготовка АПЛ к учениям."
     "Моряки-подводники приняли лодку, провели осмотр всех отсеков."
     window hide
     stop music fadeout 2
     scene kp with dissolve2
-    play ambience insideKursk fadein 2 volume 0.3
+    play ambience kp_ambience fadein 2 volume 0.3
     window show
     "Радисты устанавливают связь с отсеками и другими кораблями."
     "Помимо 111-ти человек штатного экипажа, во время проведения операции на подлодке будут находиться ещё 7 других специалистов: 5 офицеров штаба дивизии, военпред и инженер с завода «Дагдизель»."
@@ -58,7 +58,9 @@ label k_before:
     "Вечером, командир, проверив выполненную работу и заполнив чек-лист, отдаёт экипажу команду отдыхать перед грядущим выходом в море."
     "Ночь с 9-го на 10-ое число моряки проводят непосредственно на подлодке."
     window hide
+    stop ambience fadeout 3
     scene black with Dissolve(3)
+    play ambience insideKursk fadein 3 volume 0.5
     play music entsan volume 0.1 fadein 2
     scene rest with Dissolve(3)
     window show
@@ -113,11 +115,23 @@ label k_sailing:
     "Все моряки поднялись в 6 утра и заняли свои посты."
     "На борт поднимаются в 7 человек, в числе которых два гражданских специалиста, один из которых должен будет наблюдать за пуском торпед."
     "Прикомандованный начальством инженер находится в отсеке №1, и вместе с экипажем проверяет торпедный боезапас."
-    "Почти в то же время запускается ядерный реактор."
+
+
+#запуск реакторов
+
+
     window hide
     stop ambience fadeout 5
     scene black with Dissolve(5)
+    jump reactor_start
+
+label reactor_start:
     $ renpy.movie_cutscene(gFile("video/reactor.webm"))
+    jump briefing
+
+label briefing:
+    $ updVisual
+    $ new_chapter(3, u"Курск: День отплытия")
     play ambience insideKursk fadein 5 volume 0.9
     scene cafeteria with Dissolve(5)
     window show
@@ -126,7 +140,7 @@ label k_sailing:
     "Руководством было дано разрешение старт на учений."
     "Они будут проходить в три этапа."
     "Первый - атака крылатой ракетой «Гранит» эскадры боевых кораблей."
-    "Второй - пуск торпеды «65-76»."
+    "Второй - пуск торпеды «65-76ПВ»."
     "Третий - возвращение на базу незамеченными."
     window hide
     stop ambience fadeout 5
@@ -138,7 +152,7 @@ label k_sailing_video:
     jump k_after_sailing
 
 label k_after_sailing:
-    $ new_chapter(3, u"Курск: Учения")
+    $ new_chapter(4, u"Курск: Учения")
     $ updVisual()
     play ambience ambience_lake_shore_day fadein 5
     scene captains with Dissolve(5)
@@ -150,29 +164,46 @@ label k_after_sailing:
     s_adm "Неудивительно, почему американцы готовы платить нам, только бы мы их утилизировали."
     window hide
     stop ambience fadeout 5
-    play ambience insideKursk fadein 5
+    play ambience insideKurst fadein 5
     scene black with Dissolve(5)
     scene kp with Dissolve(5)
     window show
-    su "Глубина какая?"
-    sk "40 метров!"
+    su "Скорость хода?"
+    st "22 узла!"
+    su "Глубина?"
+    st "40 метров!"
     su "Продуть балласт! Всплытие 10 дифферент 3!"
-    sk "Есть всплытие 10 дифферент 3!"
+    su "Скорость снизить на 5 узлов!"
+    st "Есть всплытие 10 с дифферентом 3, скорость 17 узлов!"
     "Заработали насосы, вода из балласта начала покидать лодку под действием сжатого воздуха."
     su "Приготовиться к пуску ракеты!"
     window hide
     scene torpeda1 with dissolve2
     window show
     torp "Что там с ней?"
-    dag "За последние 20 минут температура повысилась на 15 градусов."
+    dag "Температура повышена."
+    torp "Сильно?"
+    dag "За последние 20 минут на 15 градусов."
     torp "Это плохо."
     radio "Экипажу приготовиться к пуску ракеты."
     radio "Пуск через: 3, {w=0.5}2, {w=0.5}1."
-    window hide
     scene black
     show torpeda1 at k_shaking
     play sound rocketFire
-    pause (1)
+    window hide
+    stop ambience fadeout 4
+    scene black with Dissolve(4)
+    jump k_rocket_fire_video
+
+label k_rocket_fire_video:
+    $ renpy.movie_cutscene(gFile("video/rocket_fire.webm"))
+    jump aft_rocket_fire
+
+label aft_rocket_fire:
+    $ new_chapter(5, u"Курск: Стрельба ракетой")
+    $ updVisual()
+    play ambience insideKurst fadein 4
+    scene torpeda1 with Dissolve(4)
     window show
     radio "Пуск успешный."
     torp "Всё, через час распрощаемся с нашим «толстяком»."
@@ -183,7 +214,7 @@ label k_after_sailing:
     window show
     su "C Петра Великого докладывают, об успешном поражении цели, молодцы!"
     su "Погружение до 40 метров, дифферент на нос 5, взять курс на 130 градусов, установить скорость 25 узлов."
-    sk "Есть погружение 40 дифферент 5, курс 130, скорость 25!"
+    st "Есть погружение 40 дифферент 5, курс 130, скорость 25!"
     window hide
     stop ambience fadeout 5
     scene black with Dissolve(5)
@@ -194,7 +225,7 @@ label k_norv_base_video:
     jump norv_base
 
 label norv_base:
-    $ new_chapter(4, u"Курск: «Оласверн»")
+    $ new_chapter(6, u"Курск: «Оласверн»")
     $ updVisual()
     play ambience inside_norv fadein 5
     scene norv1 with Dissolve(5)
@@ -202,46 +233,63 @@ label norv_base:
     com "Driver Russerne øvelser i Barentshavet igjen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Русские снова проводят учения в баренцевом море?"
     nrv "Ja, sir.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Да, сэр."
     com "I hvilken sammensetning denne gangen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}В каком составе на этот раз?"
-    nrv "Hangarskip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kursk» Oscar klasse II, flere destroyere.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск» класса Oscar II, несколько эсминцев."
-    nrv "Totalt - 50 skip og en ubåt.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Всего - 50 кораблей и одна субмарина."
+    nrv "Hangarstip «Admiral Kuznetsov», cruiser «Peter Den Store», APC «Kurst» Oscar klasse II, flere destroyere.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Авианесущий крейсер «Адмирал Кузнецов», крейсер «Пётр Великий», АПРК «Курск» класса Oscar II, несколько эсминцев."
+    nrv "Totalt - 50 stip og en ubåt.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Всего - 50 кораблей и одна субмарина."
     com "Oscar II... Typer av våpen?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Оскар II... Тип вооружения?"
-    nrv "24 anti-skip missiler P-700 «Granitt», torpedoer.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}24 противокорабельные ракеты П-700 «Гранит», торпеды."
+    nrv "24 anti-stip missiler P-700 «Granitt», torpedoer.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}24 противокорабельные ракеты П-700 «Гранит», торпеды."
     com "Vis det på radarene.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Покажите на радарах."
     nrv "Umulig. Det er usynlig, stille.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Невозможно. Она невидимая, бесшумная."
     com "Dårlig. Fortsett å se.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Плохо. Продолжайте наблюдение."
     window hide
     stop ambience fadeout 5
     scene black with Dissolve(5)
+    jump torp_attention
+
+label torp_attention:
+    $ new_chapter(7, u"Курск: Загрузка торпеды")
+    $ updVisual()
+    play ambience kp_ambience fadein 5
+    scene kp with Dissolve(5)
+    window show
+    st "Товарищ капитан, корабельная группа докладывает на берег."
+    st "В скором времени будут готовы продолжить."
+    su "Через пол часа переходим ко второму этапу учений."
+    su "Не забудьте открыть вентиляцию между отсеками, иначе мы все рискуем получить контузию."
+    st "Так точно!"
+    play sound ra_1
+    p_radio "Центральный, это первый, соедините с капитаном."
+    play sound ra_1
+    su "Первый, это центральный, говорит капитан, что у вас?"
+    play sound ra_1
+    p_radio "Проблемы с «65-76ПВ». Показатели шалят."
+    play sound ra_1
+    su "Доложите о состоянии учебной торпеды."
+    play sound ra_1
+    p_radio "Торпеда в норме, но давление и температура повышены. Запрашиваю разрешение на аварийный сброс в целях безопасности."
+    play sound ra_1
+    su "Внутренние показатели повышены в пределах допустимого?"
+    play sound ra_1
+    p_radio "Так точно."
+    play sound ra_1
+    su "Аварийный сброс запрещаю. Через 5 минут начинайте погрузку в аппарат."
+    play sound ra_1
+    p_radio "Слушаюсь."
+    window hide 
+    stop ambience fadeout 2
     jump torp_boom
 
 label torp_boom:
-    $ new_chapter(5, u"Курск: Загрузка торпеды")
-    $ updVisual()
-    play ambience insideKursk fadein 5
-    scene kp with Dissolve(5)
-    window show
-    sk "Корабельная группа докладывает на берег и в скором времени будет готова продолжить."
-    su "Через пол часа переходим ко второму этапу учений."
-    su "Первому отсеку начать загрузку торпеды. Открыть вентиляцию между отсеками."
-    sk "Так точно!"
-    window hide
-    scene torpeda1 with dissolve2
-    play sound ra_1
-    window show
-    p_radio "Первый отсек, состояние учебной торпеды?"
-    play sound ra_1
-    torp "Торпеда «65-76» в норме, но внутреннее давление и температура повышены."
-    play sound ra_1
-    p_radio "В пределах допустимого?"
-    play sound ra_1
-    torp "Так точно."
-    play sound ra_1
-    p_radio "Принято. Начинайте погрузку."
-    play sound ra_1
-    torp "Слушаюсь."
-    window hide
+    $ updVisual
+    $ new_chapter(8, u"Курск: Погрузка торпеды")
+    play ambience insideKursk fadein 2
     scene torpeda2 with dissolve2
     window show
+
+
+    #диалог перед погрузкой
+
+
+
     dag "Торпедный аппарат готов."
     torp "Загружай."
     stop ambience fadeout 5
@@ -283,7 +331,6 @@ label torp_boom:
     with dissolve
     play sound_1 boom_1 volume 0.5   
     pause (0.75)  
-    pause (0.75)
     scene black
     show fire_torpeda2 
     with dspr
@@ -302,7 +349,7 @@ label k_first_explosion_video:
     jump aft_first_explosion
 
 label aft_first_explosion:
-    $ new_chapter(6, u"Курск: Взрыв торпеды")
+    $ new_chapter(9, u"Курск: Взрыв торпеды")
     $ updVisual()
     play ambience insideKursk fadein 2
     scene black
@@ -349,7 +396,7 @@ label aft_first_explosion:
     scene turb4 with Dissolve(3)
     window show
     gb "Товарищ командир, в первом отсекe пожар!"
-    mo "Найди документацию и прочитай какая температура детонации."
+    mo "Найди документацию, какая температура детонации?"
     sk "Торпеды на стелажах взорвутся при температуре 250 градусов."
     bk "Сколько сейчас?"
     gb "270."
@@ -358,11 +405,11 @@ label aft_first_explosion:
     scene turb1 with dissolve2
     window show
     bk "Что нам делать?"
+    mo "Без паники!"
     mo "Всё как нас учили."
     mo "Герметизируем отсек, задраиваем переборку."
-    mo "В случае задымления расчехляем ПДА!{color=#a5a5a5}{vspace=10}{space=100}ПДА{space=10}-{space=10}Портативный дыхательный аппарат"
+    mo "В случае задымления расчехляем ПДА.{color=#a5a5a5}{vspace=10}{space=100}ПДА{space=10}-{space=10}Портативный дыхательный аппарат"
     gb "Температура зашкалила!"
-    mo "Без паники..."
     window hide
     pause (3)
     scene black with Dissolve(2)
@@ -373,6 +420,6 @@ label k_second_explosion_video:
     jump aft_second_explosion
 
 label aft_second_explosion:
-    $ new_chapter(7, u"Курск: Взрыв боезапаса")
+    $ new_chapter(10, u"Курск: Взрыв боезапаса")
     $ updVisual()
     "а"

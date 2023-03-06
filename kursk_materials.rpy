@@ -51,6 +51,7 @@ init 2:
     $ boom_2 = gFile("sound/sfx/boom_2.mp3")
     $ smth_comming = gFile("sound/sfx/smth_comming.mp3")
     $ fire = gFile("sound/sfx/fire.mp3")
+    $ kp_ambience = gFile("sound/sfx/Bunker_Special1.ogg")
     
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
@@ -62,6 +63,7 @@ init 2:
     $ gb = Character (u'Губарев', color = "#043f7a", what_color = "FFFFFF")
     $ sk = Character (u'Симонов', color = "#42688f", what_color = "FFFFFF")
     $ su = Character (u'Капитан', color = "#0721eb", what_color = "FFFFFF")
+    $ st = Character (u'Старпом', color = "#7686fe", what_color = "FFFFFF")
     $ mo = Character (u'Мотин', color = "#6873c7", what_color = "FFFFFF")
     $ adm = Character (u'Адмирал', color = "#D4AF37", what_color = "FFFFFF")
     $ s_adm = Character (u'Вице-Адмирал', color = "#ffffff", what_color = "FFFFFF")
