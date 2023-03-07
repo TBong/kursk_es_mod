@@ -29,7 +29,6 @@ init 2:
     image turb2 = gFile("cg/turb2.jpg")
     image turb3 = gFile("cg/turb3.jpg")
     image turb4 = gFile("cg/turb4.jpg")
-    image rocket = gFile("cg/rocket.jpg")
 
     #Музыка
     $ entsan = gFile("sound/music/EnterSandman.mp3")
