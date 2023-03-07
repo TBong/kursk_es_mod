@@ -29,6 +29,9 @@ init 2:
     image turb2 = gFile("cg/turb2.jpg")
     image turb3 = gFile("cg/turb3.jpg")
     image turb4 = gFile("cg/turb4.jpg")
+    image aft_explosion_1 = gFile("cg/aft_explosion_1.jpg")
+    image aft_explosion_2 = gFile("cg/aft_explosion_2.jpg")
+    image aft_explosion_3 = gFile("cg/aft_explosion_3.jpg")
 
     #Музыка
     $ entsan = gFile("sound/music/EnterSandman.mp3")
@@ -55,6 +58,9 @@ init 2:
     $ kp_ambience = gFile("sound/sfx/Bunker_Special1.ogg")
     $ press_button = gFile("sound/sfx/BigButton.ogg")
     $ vacum = gFile("sound/sfx/vacum.mp3")
+    $ sparks_fast = gFile("sound/sfx/sparks_fast.mp3")
+    $ sparks_long = gFile("sound/sfx/sparks_long.mp3")
+    $ water_coming = gFile("sound/sfx/water_coming.mp3")
     
     #Шрифт
     $ furore = gFile("font/Furore.ttf")

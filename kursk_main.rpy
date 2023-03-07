@@ -56,7 +56,6 @@ label k_before:
     "Для них выделяются отдельные каюты в жилом отсеке №4."
     "На лодку они должны попасть непосредственно перед отплытием."
     "Вечером, командир, проверив выполненную работу и заполнив чек-лист, отдаёт экипажу команду отдыхать перед грядущим выходом в море."
-    "Ночь с 9-го на 10-ое число моряки проводят непосредственно на подлодке."
     window hide
     stop ambience fadeout 3
     scene black with Dissolve(3)
@@ -115,11 +114,6 @@ label k_sailing:
     "Все моряки поднялись в 6 утра и заняли свои посты."
     "На борт поднимаются в 7 человек, в числе которых два гражданских специалиста, один из которых должен будет наблюдать за пуском торпед."
     "Прикомандованный начальством инженер находится в отсеке №1, и вместе с экипажем проверяет торпедный боезапас."
-
-
-#запуск реакторов
-
-
     window hide
     stop ambience fadeout 5
     scene black with Dissolve(5)
@@ -410,7 +404,7 @@ label aft_first_explosion:
     mo "Всё как нас учили."
     mo "Герметизируем отсек, задраиваем переборку."
     mo "В случае задымления расчехляем ПДА, покидаем отсек.{color=#a5a5a5}{vspace=10}{space=100}ПДА{space=10}-{space=10}Портативный дыхательный аппарат"
-    gb "Температура зашкалила!"
+    gb "Температура зашкалила! Сейчас шарахнет!"
     window hide
     pause (3)
     scene black with Dissolve(2)
@@ -423,4 +417,36 @@ label k_second_explosion_video:
 label aft_second_explosion:
     $ new_chapter(10, u"Курск: Взрыв боезапаса")
     $ updVisual()
-    "а"
+    play ambience water_coming fadein 5
+    play music violence
+    play sound sparks_fast
+    scene aft_explosion_2 with Dissolve(5)
+    "Мощнейший взрыв заставил прочный корпус лодки пойти ходуном."
+    "Через образовавшиеся трещины внутрь начала поступать забортная вода."
+    mo "{cps=70}{size=+2}Покинуть отсек! В корму!"
+    play sound sparks_fast
+    mo "{cps=70}{size=+2}Все в девятый отсек! Все в корму!"
+    scene aft_explosion_3 with Dissolve(2)
+    play sound ra_1
+    mo "Пятый отсек, приём!"
+    play sound ra_1
+    mo "Пятый отсек ответьте, приём!"
+    play sound ra_1
+    play sound_1 sparks_fast volume 0.2
+    p_radio "Это пятый!"
+    play sound ra_1
+    mo "Пятый уходите!"
+    play sound ra_1
+    mo "Слышите? Уходите в корму!"
+    play sound ra_1
+    p_radio "Коля, мы не можем уйти!"
+    play sound ra_1
+    play sound_1 sparks_fast volume 0.2
+    p_radio "Компенсирующие решётки опустились не до конца! Нам придётя опускать их вручную!"
+    play sound ra_1
+    mo "Саша..."
+    play sound ra_1
+    p_radio "Коля, спасайся, мы справимся."
+
+
+
