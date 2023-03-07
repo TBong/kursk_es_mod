@@ -152,7 +152,7 @@ label k_sailing_video:
     jump k_after_sailing
 
 label k_after_sailing:
-    $ new_chapter(4, u"Курск: Учения")
+    $ new_chapter(4, u"Курск: Стрельба ракетой")
     $ updVisual()
     play ambience ambience_lake_shore_day fadein 5
     scene captains with Dissolve(5)
@@ -164,7 +164,7 @@ label k_after_sailing:
     s_adm "Неудивительно, почему американцы готовы платить нам, только бы мы их утилизировали."
     window hide
     stop ambience fadeout 5
-    play ambience insideKursk fadein 5
+    play ambience kp_ambience fadein 5
     scene black with Dissolve(5)
     scene kp with Dissolve(5)
     window show
@@ -172,12 +172,15 @@ label k_after_sailing:
     st "22 узла!"
     su "Глубина?"
     st "40 метров!"
-    su "Продуть балласт! Всплытие 10 дифферент 3!"
-    su "Скорость снизить на 5 узлов!"
-    st "Есть всплытие 10 с дифферентом 3, скорость 17 узлов!"
+    su "Продуть балласт! Всплытие 10 дифферент 5!"
     "Заработали насосы, вода из балласта начала покидать лодку под действием сжатого воздуха."
-    su "Приготовиться к пуску ракеты!"
+    "Субмарина задрала нос и всплыла на заданную глубину."
+    su "Стоп машина! Полная остановка!"
+    "Турбины крутят винты в обратную сторону, 150-ти метровая махина постепенно останавливается."
+    su "Открыть крышку над ракетными шахтами 1 и 2, открыть люк шахты первой ракеты!"
+    stop ambience fadeout 2
     window hide
+    play ambience insideKursk fadein 2
     scene torpeda1 with dissolve2
     window show
     torp "Что там с ней?"
@@ -197,27 +200,6 @@ label k_after_sailing:
 
 label k_rocket_fire_video:
     $ renpy.movie_cutscene(gFile("video/rocket_fire.webm"))
-    jump aft_rocket_fire
-
-label aft_rocket_fire:
-    $ new_chapter(5, u"Курск: Стрельба ракетой")
-    $ updVisual()
-    play ambience insideKursk fadein 4
-    scene torpeda1 with Dissolve(4)
-    window show
-    radio "Пуск успешный."
-    torp "Всё, через час распрощаемся с нашим «толстяком»."
-    dag "Скорее бы. Перекисно-водородные торпеды высокую температуру не любят."
-    torp "Главное её выпустить, а там будь что будет."
-    window hide
-    scene kp with Dissolve(5)
-    window show
-    su "C Петра Великого докладывают, об успешном поражении цели, молодцы!"
-    su "Погружение до 40 метров с дифферентом на нос 5, взять курс на 130 градусов, установить скорость 25 узлов."
-    st "Есть погружение 40 дифферент 5, курс 130, скорость 25!"
-    window hide
-    stop ambience fadeout 5
-    scene black with Dissolve(5)
     jump k_norv_base_video
 
 label k_norv_base_video:
@@ -225,7 +207,7 @@ label k_norv_base_video:
     jump norv_base
 
 label norv_base:
-    $ new_chapter(6, u"Курск: «Оласверн»")
+    $ new_chapter(5, u"Курск: «Оласверн»")
     $ updVisual()
     play ambience inside_norv fadein 5
     scene norv1 with Dissolve(5)
@@ -243,6 +225,23 @@ label norv_base:
     window hide
     stop ambience fadeout 5
     scene black with Dissolve(5)
+    jump aft_rocket_fire
+
+label aft_rocket_fire:
+    $ new_chapter(6, u"Курск: Скачок показателей торпеды")
+    $ updVisual()
+    play ambience insideKursk fadein 4
+    scene torpeda1 with Dissolve(4)
+    window show
+    radio "Пуск успешный."
+    torp "Через час распрощаемся с нашим «толстяком»."
+    dag "Перекисно-водородные торпеды высокую температуру не любят. Я бы рекомендовал избавиться от неё."
+    dag "Бог его знает где она лежала до нас, и что с ней не так."
+    torp "Пожалуй, соглашусь с тобой."
+    torp "Лучше не рисковать."
+    window hide
+    stop ambience fadeout 5
+    scene black with Dissolve(5)
     jump torp_attention
 
 label torp_attention:
@@ -251,11 +250,11 @@ label torp_attention:
     play ambience kp_ambience fadein 5
     scene kp with Dissolve(5)
     window show
+    su "Погружение до 40 метров с дифферентом на нос 5, взять курс на 130 градусов, установить скорость 25 узлов."
+    su "В течение получаса переходим ко второму этапу учений."
     st "Товарищ капитан, корабельная группа докладывает на берег."
     st "В скором времени будут готовы продолжить."
-    su "Через пол часа переходим ко второму этапу учений."
-    su "Не забудьте открыть вентиляцию между отсеками, иначе мы все рискуем получить контузию."
-    st "Так точно!"
+    su "Не забудьте открыть вентиляцию между отсеками, иначе мы все рискуем получить контузию при стрельбе."
     play sound ra_1
     p_radio "Центральный, это первый, соедините с капитаном."
     play sound ra_1
