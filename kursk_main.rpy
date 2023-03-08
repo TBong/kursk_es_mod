@@ -496,13 +496,13 @@ label aft_second_explosion:
     gb "3, {w=0.5}2, {w=0.5}1."
     window hide
     play sound bump
-    pause (4)
     play ambience under_water fadein 5
-    pause (2.5)
-    play sound bump_under_water
+    pause (1.5)
     show kursk7 with Dissolve(4.5):
         pos (0, 0)
         linear 20.0 pos (-1580,0)
-    pause(10)
+    pause(3)
+    play sound bump_under_water
+    pause(7)
     scene black with Dissolve(4.5)
     "бам бам бам"
