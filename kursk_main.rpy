@@ -417,16 +417,20 @@ label k_second_explosion_video:
 label aft_second_explosion:
     $ new_chapter(10, u"Курск: Взрыв боезапаса")
     $ updVisual()
+    window hide
     play ambience water_coming fadein 5
     play music violence
     play sound sparks_fast
     scene aft_explosion_2 with Dissolve(5)
-    "Мощнейший взрыв заставил прочный корпус лодки пойти ходуном."
+    window show
+    "Мощнейший взрыв заставил прочный корпус лодки ходить ходуном."
     "Через образовавшиеся трещины внутрь начала поступать забортная вода."
     mo "{cps=70}{size=+2}Покинуть отсек! В корму!"
     play sound sparks_fast
     mo "{cps=70}{size=+2}Все в девятый отсек! Все в корму!"
+    window hide
     scene aft_explosion_3 with Dissolve(2)
+    window show
     play sound ra_1
     mo "Пятый отсек, приём!"
     play sound ra_1
@@ -435,9 +439,9 @@ label aft_second_explosion:
     play sound_1 sparks_fast volume 0.2
     p_radio "Это пятый!"
     play sound ra_1
-    mo "Пятый уходите!"
+    mo "Саша, уходите оттуда!"
     play sound ra_1
-    mo "Слышите? Уходите в корму!"
+    mo "Слышишь? Уходите в корму!"
     play sound ra_1
     p_radio "Коля, мы не можем уйти!"
     play sound ra_1
@@ -447,6 +451,59 @@ label aft_second_explosion:
     mo "Саша..."
     play sound ra_1
     p_radio "Коля, спасайся, мы справимся."
+    play sound ra_1
+    p_radio "Прощай..."
+    play sound ra_1
+    mo "Прощай."
+    window hide
+    scene black with dissolve2
+    scene aft_explosion_5 with dissolve2
+    window show
+    mo "Ещё кто-нибудь есть?"
+    mat "Я последний!"
+    mo "Бегом в девятый отсек!"
+    mo "Вперёд, вперёд, вперёд, уходим!"
+    window hide
+    scene black with dissolve2
+    scene otsek_9 with dissolve2
+    window show
+    bk "Что произошло? Почему мы здесь?"
+    gb "На носу что-то взорвалось, мы выжили только потому что мы в корме."
+    bk "Что нам делать?"
+    gb "Откроем люк и свалим отсюда."
+    mo "Нет! Мы не знаем на какой глубине находимся."
+    mo "Если мы выйдем - умрём от компрессионной болезни."
+    sk "И что тогда делать? Ждать пока нас вытащят отсюда?"
+    mo "Да, будет ждать, других вариантов нет."
+    sk "Как они поймут где мы находимся?"
+    mo "Артур, найди молоток, нужно дать сигнал чтобы нас нашли."
+    gb "Сейчас."
+    mo "Дима, проверь насосы, воды по колено."
+    bk "Понял."
+    window hide
+    stop music fadeout 5
+    scene black with dissolve
+    scene stuk with dissolve
+    window show
+    gb "Два раза по 4 удара, каждый час в начале часа."
+    mo "Четыре удара, затем ещё четыре."
+    gb "Да."
+    window hide
+    scene black with dissolve
+    window show
+    gb "3, {w=0.5}2, {w=0.5}1."
+    window hide
+    play sound bump
+    pause (1)
+    scene kursk7 with dissolve2
+    "бам бам бам"
+
+    
+
+
+
+
+
 
 
 

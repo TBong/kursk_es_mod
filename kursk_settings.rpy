@@ -1,7 +1,7 @@
 init 1:
 
     define config.developer = True
-    $ mods["k_main"]=u"{font=[patternFont]}{color=#741111}Курск"
+    $ mods["k_main"]=u"{font=[patternFont]}{color=#741111}К-141 «Курск»"
 
     define gui.text_color = "#ffffff"
     define gui.interface_text_color = "#ffffff"
@@ -48,7 +48,7 @@ init -1 python:
     
     def dpaNewChapter(dayNum, chapterName):
         dpaSetChapter(dayNum, chapterName)
-        updVisual()    
+        updVisual()
 
     def gFileSayGui(path):
         return gFile("screens/dialog/"+path)    

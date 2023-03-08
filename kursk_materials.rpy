@@ -17,6 +17,7 @@ init 2:
     image kursk4 = gFile("cg/kursk_4.jpg")
     image kursk5 = gFile("cg/kursk_5.jpg")
     image kursk6 = gFile("cg/kursk_6.jpg")
+    image kursk7 = gFile("cg/kursk_7.jpg")
     image captains = gFile("cg/captains.jpg")
     image cafeteria = gFile("cg/cafeteria.jpg")
     image fire_torpeda1 = gFile("cg/fire_torpeda1.jpg")
@@ -32,6 +33,11 @@ init 2:
     image aft_explosion_1 = gFile("cg/aft_explosion_1.jpg")
     image aft_explosion_2 = gFile("cg/aft_explosion_2.jpg")
     image aft_explosion_3 = gFile("cg/aft_explosion_3.jpg")
+    image aft_explosion_4 = gFile("cg/aft_explosion_4.jpg")
+    image aft_explosion_5 = gFile("cg/aft_explosion_5.jpg")
+    image aft_explosion_6 = gFile("cg/aft_explosion_6.jpg")
+    image otsek_9 = gFile("cg/otsek_9.jpg") 
+    image stuk = gFile("cg/stuk.jpg") 
 
     #Музыка
     $ entsan = gFile("sound/music/EnterSandman.mp3")
@@ -61,6 +67,7 @@ init 2:
     $ sparks_fast = gFile("sound/sfx/sparks_fast.mp3")
     $ sparks_long = gFile("sound/sfx/sparks_long.mp3")
     $ water_coming = gFile("sound/sfx/water_coming.mp3")
+    $ bump = gFile("sound/sfx/bump.mp3")
     
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
@@ -68,6 +75,7 @@ init 2:
 
     #Персонажи
     $ hor = Character (u'Моряки', color = "#1f5790", what_color = "FFFFFF")
+    $ mat = Character (u'Моряк', color = "#367bbf", what_color = "FFFFFF")
     $ bk = Character (u'Быков', color = "#4ea0f1", what_color = "FFFFFF")
     $ gb = Character (u'Губарев', color = "#043f7a", what_color = "FFFFFF")
     $ sk = Character (u'Симонов', color = "#42688f", what_color = "FFFFFF")
