@@ -296,6 +296,7 @@ label torp_boom:
         zpos 0
         linear 10.3 ypos -70 xpos 20 zpos -500
     pause (10.3)
+    scene black with dissolve 
     camera:
         perspective True
         xpos 0 zpos 0 ypos 0
@@ -465,6 +466,7 @@ label aft_second_explosion:
     mo "Вперёд, вперёд, вперёд, уходим!"
     window hide
     scene black with dissolve2
+    play ambience section_9 fadein 5
     scene otsek_9 with dissolve2
     window show
     bk "Что произошло? Почему мы здесь?"
@@ -494,16 +496,13 @@ label aft_second_explosion:
     gb "3, {w=0.5}2, {w=0.5}1."
     window hide
     play sound bump
-    pause (1)
-    scene kursk7 with dissolve2
+    pause (4)
+    play ambience under_water fadein 5
+    pause (2.5)
+    play sound bump_under_water
+    show kursk7 with Dissolve(4.5):
+        pos (0, 0)
+        linear 20.0 pos (-1580,0)
+    pause(10)
+    scene black with Dissolve(4.5)
     "бам бам бам"
-
-    
-
-
-
-
-
-
-
-

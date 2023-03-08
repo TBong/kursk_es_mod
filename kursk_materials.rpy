@@ -68,6 +68,9 @@ init 2:
     $ sparks_long = gFile("sound/sfx/sparks_long.mp3")
     $ water_coming = gFile("sound/sfx/water_coming.mp3")
     $ bump = gFile("sound/sfx/bump.mp3")
+    $ section_9 = gFile("sound/sfx/section_9.mp3")
+    $ under_water = gFile("sound/sfx/under_water.mp3")
+    $ bump_under_water = gFile("sound/sfx/bump_under_water.mp3")
     
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
