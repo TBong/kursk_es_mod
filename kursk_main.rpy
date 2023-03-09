@@ -505,4 +505,15 @@ label aft_second_explosion:
     play sound bump_under_water
     pause(7)
     scene black with Dissolve(4.5)
-    "бам бам бам"
+    jump norv_attention
+
+label norv_attention:
+    $ new_chapter(11, u"Курск: Сейсшическая активность")
+    $ updVisual()
+    play ambience norv_base fadein 5
+    scene norv_base with Dissolve(5)
+    window show
+    com "Что там у русских?"
+    "Сейсшическая активность в районе проведения учений."
+    com "Поподробнее?"
+    
