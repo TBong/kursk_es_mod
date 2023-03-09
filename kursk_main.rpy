@@ -497,23 +497,44 @@ label aft_second_explosion:
     window hide
     play sound bump
     play ambience under_water fadein 5
-    pause (1.5)
+    pause (5)
     show kursk7 with Dissolve(4.5):
         pos (0, 0)
         linear 20.0 pos (-1580,0)
-    pause(3)
+    pause(2)
     play sound bump_under_water
-    pause(7)
+    pause(8)
+    stop ambience fadeout 5
     scene black with Dissolve(4.5)
+    jump norv_attention_video
+
+label norv_attention_video:
+    $ renpy.movie_cutscene(gFile("video/norv_base.webm"))
     jump norv_attention
 
 label norv_attention:
-    $ new_chapter(11, u"Курск: Сейсшическая активность")
+    $ new_chapter(11, u"Курск: Сейсмические явления")
     $ updVisual()
-    play ambience norv_base fadein 5
-    scene norv_base with Dissolve(5)
+    play ambience inside_norv fadein 5
+    scene norv1 with Dissolve(5)
     window show
-    com "Что там у русских?"
-    nrv "Сейсшическая активность в районе проведения учений."
-    com "Поподробнее?"
+    com "Hva er det der?{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Что там?"
+    nrv "Russiske ødeleggere cruise på et torg, resten av skipene går i sirkler med liten radius.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Русские эсминцы курсируют в квадрате, остальные корабли ходят кругами небольшого радиуса."
+    nrv "Seismiske fenomener observeres i området.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}В районе наблюдаются сейсмические явления."
+    com "Seismikk? Mer detaljert.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Сейсмические? Поподробнее."
+    nrv "Ett lite trykk, ett større.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Один маленький толчок, один крупнее."
+    nrv "3,9 på Richters skala.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}3,9 баллов по шкале Рихтера."
+    nrv "Klokka 11:28 med en forskjell på to minutter.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}В 11:28 с разницей в две минуты."
+    window hide
+    scene norv3 with dissolve2
+    window show
+    com "Herre... De har mistet ubåten!{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Господи... Они потеряли подлодку!"
+    com "David, seismologers data om Barentshavet.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Дэвид, данные сейсмологов по Баренцеву морю."
+    nrv "Ja, sir.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Есть сэр."
+    com "Be Amerikanerne om å omdirigere kommunikasjonssatellitten til havnene I Murmansk.{color=#a5a5a5}{vspace=5}{space=20}-{space=20}Попросите американцев перенаправить спутник связи на порты Мурманска."
+    
+
+
+
+
     

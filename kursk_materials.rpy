@@ -26,6 +26,7 @@ init 2:
     image fire_torpeda4 = gFile("cg/fire_torpeda4.jpg")
     image norv1 = gFile("cg/norv1.jpg")
     image norv2 = gFile("cg/norv2.jpg")
+    image norv3 = gFile("cg/norv3.jpg")
     image turb1 = gFile("cg/turb1.jpg")
     image turb2 = gFile("cg/turb2.jpg")
     image turb3 = gFile("cg/turb3.jpg")
@@ -93,6 +94,7 @@ init 2:
     $ p_radio = Character (u'Рация', color = "#ff0000", what_color = "FFFFFF")
     $ com = Character (u'Главнокомандующий', color = "#741111", what_color = "FFFFFF")
     $ nrv = Character (u'Норвежский офицер', color = "#0b1984", what_color = "FFFFFF")
+    $ nrv_s = Character (u'Норвежский сейсмолог', color = "#285512", what_color = "FFFFFF")
     
     #GUI
     image Dst dst1 = gFile("gui/Dust1.png")
