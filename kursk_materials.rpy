@@ -78,8 +78,7 @@ init 2:
     $ patternFont = gFile("font/18035.otf")
 
     #Персонажи
-    $ hor = Character (u'Моряки', color = "#1f5790", what_color = "FFFFFF")
-    $ mat = Character (u'Моряк', color = "#367bbf", what_color = "FFFFFF")
+    $ hor = Character (u'Подводники', color = "#1f5790", what_color = "FFFFFF")
     $ bk = Character (u'Быков', color = "#4ea0f1", what_color = "FFFFFF")
     $ gb = Character (u'Губарев', color = "#043f7a", what_color = "FFFFFF")
     $ sk = Character (u'Симонов', color = "#42688f", what_color = "FFFFFF")
