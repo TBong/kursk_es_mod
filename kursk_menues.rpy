@@ -15,7 +15,7 @@ screen k_main_menu:
         auto gFile("screens/menu/nachat_2_%s.png")
         xpos 55
         ypos 200
-        action [ Jump ('k_prolog') ]
+        action [ Jump ('k_news') ]
     imagebutton:
         auto gFile("screens/menu/load_2_%s.png")
         xpos 55
