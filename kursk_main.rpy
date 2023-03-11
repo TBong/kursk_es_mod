@@ -82,9 +82,9 @@ label k_before:
     sk "Ладно тебе, успеешь ещё."
     mo "Так, товарищи подводники, кажется, пора спать! Завтра у нас ответственный день!"
     window hide
-    stop music fadeout 5
-    stop ambience fadeout 5
-    scene black with Dissolve(5)
+    stop music fadeout 3
+    stop ambience fadeout 3
+    scene black with Dissolve(3)
     jump k_10aug_6_video
 
 label k_10aug_6_video:
@@ -94,8 +94,8 @@ label k_10aug_6_video:
 label k_sailing:
     $ new_chapter(2, u"Курск: День отплытия")
     $ updVisual()
-    play ambience chayki fadein 2
-    scene kursk5 with Dissolve(5)
+    play ambience chayki fadein 3
+    scene kursk5 with Dissolve(3)
     window show
     "10 августа в порту Североморска идёт подготовка АПРК к учениям.{color=#c89f25}{vspace=10}{space=100}АПРК{space=10}-{space=10}Атомный подводный ракетный крейсер"
     "Радиотехники устанавливают связь между отсеками и с другими кораблями."
@@ -103,8 +103,8 @@ label k_sailing:
     "Прикомандованный начальством инженер находится в отсеке №1 и вместе с экипажем проверяет боезапас."
     "По окончанию подготовки, капитан отдаёт экипажу команду на запуск реакторов."
     window hide
-    stop ambience fadeout 5
-    scene black with Dissolve(5)
+    stop ambience fadeout 3
+    scene black with Dissolve(3)
     jump reactor_start
 
 label reactor_start:
@@ -115,8 +115,8 @@ label briefing:
     $ updVisual
     $ new_chapter(3, u"Курск: День отплытия")
     scene black with dissolve2
-    play ambience insideKursk fadein 5 volume 0.9
-    scene cafeteria with Dissolve(5)
+    play ambience insideKursk fadein 3 volume 0.9
+    scene cafeteria with Dissolve(3)
     window show
     "Через час командиры отсеков докладывают капитану о проведённой работе."
     "В ходе небольшого брифинга ни о каких нарушениях в работе систем подлодки заявлено не было."
@@ -126,8 +126,8 @@ label briefing:
     "Третий - возвращение на базу незамеченным."
     "«Курск» выходит в Баренцево море."
     window hide
-    stop ambience fadeout 5
-    scene black with Dissolve(5)
+    stop ambience fadeout 3
+    scene black with Dissolve(3)
     jump k_sailing_video
 
 label k_sailing_video:
@@ -137,18 +137,18 @@ label k_sailing_video:
 label k_after_sailing:
     $ new_chapter(4, u"Курск: Стрельба ракетой")
     $ updVisual()
-    play ambience ambience_lake_shore_day fadein 5
-    scene captains with Dissolve(5)
+    play ambience ambience_lake_shore_day fadein 3
+    scene captains with Dissolve(3)
     window show
     s_adm "А ведь эта лодка создавалась под предлогом незаметности. Ни один радар не сможет её засечь, если те, кто в ней находится, этого захотят!"
     adm "Как по мне, «Акулы» куда лучше."
     adm "Им уже почти по 25 лет, а они до сих пор вселяют страх на Соединённые Штаты."
     s_adm "Наследие советской инженерии! Неудивительно, почему американцы готовы платить нам, только бы мы их утилизировали."
     window hide
-    stop ambience fadeout 5
-    scene black with Dissolve(5)
-    play ambience kp_ambience fadein 5
-    scene kp with Dissolve(5)
+    stop ambience fadeout 3
+    scene black with Dissolve(3)
+    play ambience kp_ambience fadein 3
+    scene kp with Dissolve(3)
     window show
     su "Скорость хода?"
     st "22 узла!"
