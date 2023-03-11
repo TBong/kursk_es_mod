@@ -91,9 +91,9 @@ init 2:
     $ torp = Character (u'Торпедист', color = "#8c8e8f", what_color = "FFFFFF")
     $ radio = Character (u'Динамик', color = "#ff0000", what_color = "FFFFFF")
     $ p_radio = Character (u'Рация', color = "#ff0000", what_color = "FFFFFF")
-    $ com = Character (u'Главнокомандующий', color = "#741111", what_color = "FFFFFF")
-    $ nrv = Character (u'Норвежский офицер', color = "#0b1984", what_color = "FFFFFF")
-    $ nrv_s = Character (u'Норвежский сейсмолог', color = "#285512", what_color = "FFFFFF")
+    $ com = Character (u'Viseadmiral', color = "#741111", what_color = "FFFFFF")
+    $ nrv = Character (u'Kommandør', color = "#0b1984", what_color = "FFFFFF")
+    $ nrv_s = Character (u'Løytnant', color = "#285512", what_color = "FFFFFF")
     
     #GUI
     image Dst dst1 = gFile("gui/Dust1.png")
