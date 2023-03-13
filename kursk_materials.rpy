@@ -29,9 +29,6 @@ init 2:
     image aft_explosion_5 = gFile("cg/aft_explosion_5.jpg")
     image otsek_9 = gFile("cg/otsek_9.jpg") 
     image stuk = gFile("cg/stuk.jpg") 
-    image otsek_9_upor = gFile("cg/otsek_9_upor.jpg") 
-    image otsek_9_pump = gFile("cg/otsek_9_pump.jpg") 
-    image otsek_9_otsos = gFile("cg/otsek_9_otsos.jpg") 
 
     #Музыка
     $ entsan = gFile("sound/music/EnterSandman.mp3")
