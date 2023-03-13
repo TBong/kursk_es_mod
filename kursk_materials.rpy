@@ -28,7 +28,8 @@ init 2:
     image aft_explosion_3 = gFile("cg/aft_explosion_3.jpg")
     image aft_explosion_5 = gFile("cg/aft_explosion_5.jpg")
     image otsek_9 = gFile("cg/otsek_9.jpg") 
-    image stuk = gFile("cg/stuk.jpg") 
+    image stuk = gFile("cg/stuk.jpg")
+    image hydro = gFile("cg/hydro.jpg") 
 
     #Музыка
     $ entsan = gFile("sound/music/EnterSandman.mp3")
@@ -61,10 +62,20 @@ init 2:
     $ section_9 = gFile("sound/sfx/section_9.mp3")
     $ under_water = gFile("sound/sfx/under_water.mp3")
     $ bump_under_water = gFile("sound/sfx/bump_under_water.mp3")
+    $ Suddenly4 = gFile("sound/sfx/Suddenly4.ogg")
+    $ Suddenly9 = gFile("sound/sfx/Suddenly9.ogg")
+    $ radio_set = gFile("sound/sfx/SettingUpRadio.ogg")
+    $ hydro_ambience = gFile("sound/sfx/RadioLightHouseEaster.ogg")
+    $ scan = gFile("sound/sfx/TelemtryScan.ogg")
+    $ PenSound1 = gFile("sound/sfx/PenSound1.ogg")
+    
+    
+    
     
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
     $ patternFont = gFile("font/18035.otf")
+    $ cursive = gFile("font/cursive.ttf")
 
     #Персонажи
     $ hor = Character (u'Подводники', color = "#1f5790", what_color = "FFFFFF")

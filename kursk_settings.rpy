@@ -14,13 +14,16 @@ init 1:
         linear 0.2 pos (5, -5)
         linear 0.2 pos (0, 0)
 
-    transform k_shaking_repeat:
+    transform k_shaking_2:
         anchor (0.0, 0.0) pos (0.0, 0.0)
-        linear 0.3 pos (-5, -5)
-        linear 0.3 pos (0, 0)
-        linear 0.3 pos (5, -5)
-        linear 0.3 pos (0, 0)
-        repeat
+        linear 0.2 pos (-5, -5)
+        linear 0.2 pos (0, 0)
+        linear 0.2 pos (5, -5)
+        linear 0.2 pos (0, 0)
+        linear 0.2 pos (-5, -5)
+        linear 0.2 pos (0, 0)
+        linear 0.2 pos (5, -5)
+        linear 0.2 pos (0, 0)
 
 init -1 python:
 
