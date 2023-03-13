@@ -484,6 +484,23 @@ label aft_second_explosion:
     gb "Сейчас."
     mo "Федь, проверь насосы, воды по колено."
     bk "Понял."
+    mo "Парни, берем упор и закрываем пробоину!"
+    window hide
+    scene otsek_9_upor with dissolve2
+    window show
+    "Командир 7-го отсека вместе с несколькими подводниками опустился в воду и начал прижимать упор к пробоине."
+    "Спустя некоторое время упор был плотно прижат к корпусу лодки и зафиксирован болтами."
+    scene otsek_9 with dissolve2
+    window show
+    sk "Черт, уровень воды уже полтора метра."
+    mo "Что там с насосом? Нужно срочно её откачать"
+    scene otsek_9_pump with dissolve2
+    window show
+    bk "Сейчас всё будет! Подсоединяю насос к резервной батарее."
+    bk "Вроде работает, проверьте отсос."
+    scene otsek_9_otsos with dissolve2
+    window show
+    "Из раскрытого пакета с порошковым вещество частицы начали всасываться в насос."
     window hide
     stop music fadeout 5
     scene black with dissolve
