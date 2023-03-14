@@ -14,17 +14,6 @@ init 1:
         linear 0.2 pos (5, -5)
         linear 0.2 pos (0, 0)
 
-    transform k_shaking_2:
-        anchor (0.0, 0.0) pos (0.0, 0.0)
-        linear 0.2 pos (-5, -5)
-        linear 0.2 pos (0, 0)
-        linear 0.2 pos (5, -5)
-        linear 0.2 pos (0, 0)
-        linear 0.2 pos (-5, -5)
-        linear 0.2 pos (0, 0)
-        linear 0.2 pos (5, -5)
-        linear 0.2 pos (0, 0)
-
 init -1 python:
 
     def GetRanImg(imgs):
