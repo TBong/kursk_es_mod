@@ -69,9 +69,6 @@ init 2:
     $ scan = gFile("sound/sfx/TelemtryScan.ogg")
     $ PenSound1 = gFile("sound/sfx/PenSound1.ogg")
     
-    
-    
-    
     #Шрифт
     $ furore = gFile("font/Furore.ttf")
     $ patternFont = gFile("font/18035.otf")
