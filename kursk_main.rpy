@@ -467,9 +467,9 @@ label aft_second_explosion:
     mo "Бегом в девятый отсек!"
     mo "Вперёд, вперёд, вперёд, уходим!"
     window hide
-    scene black with dissolve2
-    play ambience section_9 fadein 5
-    scene otsek_9 with dissolve2
+    scene black with Dissolve(3)
+    play ambience section_9 fadein 3
+    scene otsek_9 with Dissolve(3)
     window show
     bk "Что произошло? Почему мы здесь?"
     gb "На носу что-то взорвалось, мы выжили только потому что мы в корме."
@@ -573,7 +573,13 @@ label peter_the_great:
     play sound_1 PenSound1
     "{cps=+65}{font=[cursive]}{vspace=20}{space=40}{color=#2961ee}{size=+20}В 11:30 На индикаторе кругового обзора наблюдал сигнал, который выглядел как вспышка на экране размером с пятирублевую монету."
     "{vspace=32}Заподозрив неладное, Киров докладывает о явлении капитану корабля."
-    
+    jump in_9_ots
+
+label in_9_ots:
+    $ new_chapter(13, u"Курск: Девятый отсек")
+    $ updVisual()
+    play ambience section_9 fadein 3
+    scene otsek_9 with Dissolve(3)
     
 
 
